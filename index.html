@@ -1,0 +1,1517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Maximum Hong Kong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+:root{
+  --paper:#eef0ed;
+  --surface:#ffffff;
+  --surface-2:#f6f7f4;
+  --ink:#14181a;
+  --ink-2:#394245;
+  --muted:#6b7679;
+  --line:#d6dbd7;
+  --line-2:#e5e9e5;
+  --accent:#b8281c;
+  --accent-soft:#fae4e1;
+  --amber:#8a5a06;
+  --amber-soft:#faeed6;
+  --blue:#0a5ea8;
+  --blue-soft:#dde9f6;
+  --l-tsuen:#d8251c;
+  --l-island:#0860a8;
+  --l-kwun:#00844b;
+  --l-tung:#d87f13;
+  --l-sea:#00707c;
+  --shadow:0 1px 2px rgba(20,24,26,.05),0 8px 24px -16px rgba(20,24,26,.3);
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --disp:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0c1012;
+    --surface:#141a1c;
+    --surface-2:#192023;
+    --ink:#e8edea;
+    --ink-2:#bcc7c4;
+    --muted:#8b9799;
+    --line:#252e31;
+    --line-2:#1e2629;
+    --accent:#ff7263;
+    --accent-soft:#3a1712;
+    --amber:#e0a94f;
+    --amber-soft:#332612;
+    --blue:#68b0ec;
+    --blue-soft:#10263a;
+    --l-tsuen:#ff5548;
+    --l-island:#4d9ee0;
+    --l-kwun:#22b674;
+    --l-tung:#f0a041;
+    --l-sea:#31b2bd;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px -18px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0c1012;
+  --surface:#141a1c;
+  --surface-2:#192023;
+  --ink:#e8edea;
+  --ink-2:#bcc7c4;
+  --muted:#8b9799;
+  --line:#252e31;
+  --line-2:#1e2629;
+  --accent:#ff7263;
+  --accent-soft:#3a1712;
+  --amber:#e0a94f;
+  --amber-soft:#332612;
+  --blue:#68b0ec;
+  --blue-soft:#10263a;
+  --l-tsuen:#ff5548;
+  --l-island:#4d9ee0;
+  --l-kwun:#22b674;
+  --l-tung:#f0a041;
+  --l-sea:#31b2bd;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px -18px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:900px;margin:0 auto;padding-inline:18px;padding-block:0 70px}
+a{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent);text-underline-offset:2px}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:900px;margin:0 auto;padding:9px 18px;display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{font-family:var(--disp);font-size:12px;font-weight:600;text-decoration:none;padding:4px 9px;border-radius:5px;white-space:nowrap;color:var(--ink-2);border:1px solid transparent}
+.nav a:hover{background:var(--surface);border-color:var(--line)}
+.nav a b{font-weight:700}
+
+/* hero */
+header.hero{padding-block:36px 28px}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,66px);line-height:.95;letter-spacing:-.035em;margin:0 0 18px;text-wrap:balance}
+.lede{font-size:19px;line-height:1.55;color:var(--ink-2);max-width:60ch;margin:0 0 6px;font-weight:300}
+.lede strong{font-weight:600;color:var(--ink)}
+
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:26px}
+.count{background:var(--surface);padding:13px 14px}
+.count b{display:block;font-family:var(--disp);font-weight:800;font-size:25px;letter-spacing:-.03em;line-height:1.1}
+.count span{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* sections */
+section{padding-block:30px;border-top:1px solid var(--line)}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(20px,4vw,27px);letter-spacing:-.025em;margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--muted);font-size:16px;margin:0 0 20px;max-width:64ch;font-weight:300}
+h3{font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:-.005em;margin:26px 0 10px}
+
+/* day */
+.day{margin-bottom:8px}
+.dayhead{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:12px 15px;border-radius:9px 9px 0 0;
+  background:var(--lc);color:#fff;
+}
+.dayhead .dnum{font-family:var(--mono);font-size:11px;letter-spacing:.1em;opacity:.85}
+.dayhead h3{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:-.02em;margin:0;color:#fff}
+.dayhead .dline{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;background:rgba(255,255,255,.2);padding:3px 8px;border-radius:4px;white-space:nowrap}
+.daybody{border:1px solid var(--line);border-top:0;border-radius:0 0 9px 9px;background:var(--surface);padding:6px 0 4px}
+
+.step{display:grid;grid-template-columns:62px 1fr;gap:0 14px;padding:11px 16px 11px 14px;border-bottom:1px solid var(--line-2);position:relative}
+.step:last-child{border-bottom:0}
+.step .t{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ink);padding-top:2px;font-variant-numeric:tabular-nums}
+.step .t em{display:block;font-style:normal;font-size:10px;color:var(--muted);font-weight:400;margin-top:1px}
+.step .c h4{font-family:var(--disp);font-weight:700;font-size:15.5px;letter-spacing:-.01em;margin:0 0 3px;line-height:1.3}
+.step .c p{margin:0;font-size:15.5px;line-height:1.55;color:var(--ink-2);font-weight:300}
+.step .c p + p{margin-top:6px}
+.step.move{background:var(--surface-2)}
+.step.move .c h4{font-weight:600;font-size:14px;color:var(--muted);font-family:var(--mono);letter-spacing:0}
+.step.move .c p{font-size:14px}
+
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:5px}
+.tag{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:4px}
+.tag.photo{background:var(--accent-soft);color:var(--accent)}
+.tag.eat{background:var(--amber-soft);color:var(--amber)}
+.tag.book{background:var(--blue-soft);color:var(--blue)}
+.tag.cost{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.tag.star{background:var(--accent);color:#fff}
+
+.links{margin-top:7px;display:flex;flex-wrap:wrap;gap:3px 14px;font-family:var(--disp);font-size:12.5px;font-weight:500}
+.links a{color:var(--blue)}
+
+/* notes */
+.note{background:var(--surface-2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:12px 15px;margin:16px 0;font-size:15.5px;font-weight:300;color:var(--ink-2)}
+.note b{font-weight:600;color:var(--accent);font-family:var(--disp);font-size:14px}
+.note.calm{border-left-color:var(--muted)}
+.note.calm b{color:var(--ink)}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;font-weight:300}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surface-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td b{font-family:var(--disp);font-weight:700;font-size:14.5px}
+td.n{font-family:var(--mono);font-size:12.5px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+tfoot td{background:var(--surface-2);font-weight:600}
+
+/* checklist */
+.check{list-style:none;padding:0;margin:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.check li{background:var(--surface);padding:11px 15px;display:flex;gap:12px;align-items:flex-start;font-size:15.5px;font-weight:300;color:var(--ink-2)}
+.check li::before{content:"";flex:0 0 auto;width:15px;height:15px;margin-top:5px;border:1.5px solid var(--muted);border-radius:3px}
+.check li b{font-family:var(--disp);font-weight:700;font-size:14.5px;color:var(--ink);display:block;margin-bottom:1px}
+
+/* swaps */
+.swaps{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px}
+.swap{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:13px 15px}
+.swap h4{font-family:var(--disp);font-weight:700;font-size:14.5px;margin:0 0 5px}
+.swap p{margin:0;font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.5}
+
+footer{padding-block:28px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.7}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .step{grid-template-columns:54px 1fr;gap:0 10px;padding:11px 13px 11px 11px}
+  .dayhead .dline{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-in">
+  <a href="#brief"><b>Brief</b></a>
+  <a href="#d1">Mon 12</a>
+  <a href="#d2">Tue 13</a>
+  <a href="#d3">Wed 14</a>
+  <a href="#d4">Thu 15</a>
+  <a href="#d5">Fri 16</a>
+  <a href="#d6">Sat 17</a>
+  <a href="#photos">Photo recon</a>
+  <a href="#book">Book now</a>
+  <a href="#cost">Cost</a>
+</div></div>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="kicker">Hong Kong &amp; Macau · 12–17 October 2026 · the maximum version</p>
+  <h1>Maximum<br>Hong Kong.</h1>
+  <p class="lede">Six days routed for the biggest sights, the best food and the photographs worth the trip — with almost no backtracking. Every day is built around <strong>one MTR line or one ferry</strong>, so you're never crossing the city twice. Times are real, fares are checked, and the things that only happen on one specific day are already in the right slot.</p>
+  <div class="counts">
+    <div class="count"><b>6</b><span>Days</span></div>
+    <div class="count"><b>62</b><span>Photo spots</span></div>
+    <div class="count"><b>24</b><span>Food stops</span></div>
+    <div class="count"><b>2</b><span>Sunsets earned</span></div>
+    <div class="count"><b>~HK$4,400</b><span>Per person</span></div>
+  </div>
+</header>
+
+<section id="brief">
+  <h2>Three things this plan is built around</h2>
+  <p class="sub">The rest is routing. These are the decisions everything else bends to.</p>
+
+  <div class="note"><b>Wednesday 14 October is a Happy Valley race night.</b> Night racing at Happy Valley only runs on Wednesdays and the October fixture list confirms the 14th. HK$10 to get in, free for tourists over 18 with a passport. It's the best night in the city and it dictates that Wednesday is your Hong Kong Island day — the racecourse, the Monster Building and the sunset summit are all on the same MTR line.</div>
+
+  <div class="note"><b>Saturday 17 October is the start of a 3-day public holiday weekend.</b> Chung Yeung Festival is Sunday the 18th, with Monday the 19th off. So the last day stays in Kowloon on the doorstep — housing estates, temples and a food crawl, all within twenty minutes of your bags. No islands, no hikes, no Peak Tram queue on that day.</div>
+
+  <div class="note"><b>You're flying in from Malaysia, so there's no jet lag.</b> Kuala Lumpur and Hong Kong are both UTC+8. That's why this plan starts at 07:00 twice without apology — you'll wake up fine. Sunset is <strong>18:00</strong> all week, sunrise 06:18, which is what puts the two summit stops where they are.</div>
+
+  <div class="note"><b>Nothing here is compulsory — tap "Skip" on anything.</b> Every stop in the schedule and every card in the photo recon now has a Skip button. Skipping greys the stop out, strikes the title through, and tells you at the bottom of the screen how much time you just freed up. Skip something in the schedule and it greys out in the recon too, and the other way round, so the two stay in sync. "Hide skipped" gives you a clean running order for the day, and it all saves in this browser — so you can decide on the sofa, or standing on a street corner in Mong Kok.<br><br><strong>Already pre-skipped, because you said so:</strong> Taipa Houses and the Choi Hung rainbow courts. Still on the page, greyed out, one tap from coming back.</div>
+</section>
+
+<section id="d1">
+  <div class="day" style="--lc:var(--l-tsuen)">
+    <div class="dayhead">
+      <span class="dnum">DAY 1</span>
+      <h3>Mon 12 Oct · Landing &amp; the neon walk</h3>
+      <span class="dline">Tsuen Wan line · Yau Ma Tei</span>
+    </div>
+    <div class="daybody">
+
+      <div class="step"><div class="t">17:00</div><div class="c">
+        <h4>UO 717 lands, HKG Terminal 1</h4>
+        <p>Immigration, bags, and the short walk to ground transport. Budget 45 minutes. Buy your <strong>Octopus card</strong> at the arrivals hall customer service desk on the way out — HK$39 tourist card, no deposit — or add one to your iPhone in the "Octopus for Tourists" app while you wait at the belt.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">17:45<em>60 min</em></div><div class="c">
+        <h4>MOVE · Bus A21 to Nathan Road — or a taxi</h4>
+        <p>From the Terminal 1 bus terminus, HK$34.60 (≈ €3.80) each on Octopus. Sit on the upper deck on the right — the bridge crossing and the run down Nathan Road is your first proper look at the city. Get off at Yau Ma Tei; your door is four minutes' walk.</p>
+        <p><strong>Option — taxi:</strong> take a <strong>red</strong> taxi from the rank outside arrivals. About 40 minutes, door to door, roughly <strong>HK$300 (≈ €33) for the car</strong> including bags and tolls. Saves about 20 minutes and the walk with luggage. Show the driver the address in Chinese: 油麻地上海街279號.</p>
+        <div class="links"><a href="https://hkbus.app/en/route/a21-1-airport-(ground-transportation-centre)-hung-hom-station" target="_blank" rel="noopener">Live A21 times</a> · <a href="https://www.td.gov.hk/en/transport_in_hong_kong/public_transport/taxi/taxi_fare_of_hong_kong/index.html" target="_blank" rel="noopener">Official taxi fares</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">19:00</div><div class="c">
+        <h4>Drop bags, 279 Shanghai Street</h4>
+        <p>Straight back out. You're standing in the middle of the best night-food district in Hong Kong and it's already switched on.</p>
+      </div></div>
+
+      <div class="step"><div class="t">19:20<em>45 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Temple Street Night Market + Tin Hau Temple</h4>
+        <p>Three minutes from the door. Start at the Tin Hau Temple end, where the fortune tellers set up under the banyans and there's usually a Cantonese opera busker with a portable amp. Shoot upward along the street for the stacked neon-and-laundry frame, and low through the stalls for the crowd blur.</p>
+        <p><strong>Best frame:</strong> stand in the middle of the road at the Public Square Street junction, wait for a gap in the crowd, shoot straight down the tunnel of signs.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Temple+Street+Night+Market" target="_blank" rel="noopener">Map</a> · <a href="https://www.youtube.com/watch?v=W1-xHjB6GIU" target="_blank" rel="noopener">What it looks like</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">20:15<em>1 hr</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Dinner</span><span class="tag cost">HK$100–180</span></div>
+        <h4>Woosung Street cooked-food bazaar</h4>
+        <p>One block over from Temple Street and far more local: an open-air cluster of dai pai dong stalls under strip lights, plastic stools on the pavement, bottles of Tsingtao in ice buckets. Order <strong>clams in black bean sauce, salt-and-pepper squid, typhoon-shelter crab</strong> and a plate of morning glory. This is the meal people remember.</p>
+        <p>If you'd rather sit down: <strong>Hing Kee</strong> on Temple Street does charcoal claypot rice with preserved sausage, HK$80–150, and the crust at the bottom of the pot is the whole point.</p>
+        <p><strong>Dinner is a pick-one.</strong> Two alternatives follow: Mak Man Kee if you're tired, Hutong if you want the skyline. Skip the ones you don't choose.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Woosung+Street+Temporary+Cooked+Food+Hawker+Bazaar" target="_blank" rel="noopener">Woosung St</a> · <a href="https://www.google.com/maps/search/?api=1&query=Hing+Kee+Restaurant+Temple+Street" target="_blank" rel="noopener">Hing Kee</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">20:15<em>45 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Dinner option</span><span class="tag cost">~HK$50–100</span></div>
+        <h4>Or: Mak Man Kee wonton noodles, Jordan</h4>
+        <p><strong>Michelin Bib Gourmand</strong>, sixty years old, ten minutes' walk south at 51 Parkes Street. Prawn wontons you can see through the paper-thin skin, springy egg noodles, broth simmered for five hours. Portions are small, so add the braised pork knuckle.</p>
+        <p>Open <strong>12:00–00:30 daily</strong> — the safest pick if the flight lands late or you're wrecked. Quick, cheap, and the Mong Kok walk afterwards still works.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Mak+Man+Kee+Noodle+Shop+51+Parkes+Street+Jordan" target="_blank" rel="noopener">Map</a> · <a href="https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/mak-man-kee" target="_blank" rel="noopener">MICHELIN Guide</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">20:00<em>1½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Dinner option</span><span class="tag book">Book ahead</span><span class="tag cost">~HK$600+</span></div>
+        <h4>Or: Hutong — harbour-view dinner, Tsim Sha Tsui</h4>
+        <p>The skyline dinner. Refined Northern Chinese on the 18th floor of H Zentre, looking straight across Victoria Harbour at the Island. Book a <strong>window table for 20:00</strong> and the Symphony of Lights happens outside your window while you eat.</p>
+        <p>Two MTR stops from Yau Ma Tei, then about seven minutes on foot to 15 Middle Road. The splurge of the three dinner options — and if you choose it, skip the Mong Kok walk tonight and take the MTR home afterwards instead.</p>
+        <p><strong>Timing:</strong> to make a 20:00 table you'd leave Yau Ma Tei around 19:40, so drop Temple Street before dinner and walk it after you get back — the market runs until about 23:00.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Hutong+H+Zentre+15+Middle+Road+Tsim+Sha+Tsui" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">21:30<em>1 hr</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Walk north up Nathan Road into Mong Kok</h4>
+        <p>Fifteen minutes on foot, and the density keeps climbing the whole way. <strong>Sai Yeung Choi Street South</strong> is the neon canyon — signs stacked six deep across the road. Ladies' Market runs until 23:00, Sneaker Street is a full block of trainer shops, and the arcades upstairs are open late.</p>
+        <p><strong>Best frame:</strong> Sai Yeung Choi Street South looking north, phone held at chest height, shoot into the wall of signs. Then find a pedestrian crossing and shoot the crowd against them.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Sai+Yeung+Choi+Street+South+Mong+Kok" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">22:45</div><div class="c">
+        <h4>Late dessert, then bed</h4>
+        <p><strong>Kai Kai Dessert</strong> in Jordan is open to 01:00 and Michelin-listed — stone-ground black sesame soup, HK$29 a bowl. Tomorrow starts at 07:00.</p>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="d2">
+  <div class="day" style="--lc:var(--l-tung)">
+    <div class="dayhead">
+      <span class="dnum">DAY 2</span>
+      <h3>Tue 13 Oct · Lantau — Buddha, cable car, stilt village</h3>
+      <span class="dline">Tung Chung line · Lantau Island</span>
+    </div>
+    <div class="daybody">
+
+      <div class="note calm" style="margin:14px 16px"><b>The trick for today.</b> Everyone takes the cable car up and arrives at the Buddha at 11:00 with four hundred other people. You're going to take a <strong>taxi up from Tung Chung at 09:05</strong> and have the Buddha almost to yourself at 09:30 — an hour before the first cable car crowd — then ride the cable car <strong>down</strong> in the afternoon, when the light over the sea is better anyway. The taxi instead of the bus buys you half an hour more sleep for about €12–15 between you.</div>
+
+      <div class="step"><div class="t">07:45<em>30 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Breakfast</span><span class="tag cost">HK$40–70</span></div>
+        <h4>Australia Dairy Company, Jordan</h4>
+        <p>Ten minutes' walk south. Scrambled eggs with the texture of custard, on buttered toast, with macaroni soup and a milk tea. The service is famously abrupt and famously fast — you'll be in and out in twelve minutes, which is exactly what today needs. Cash only.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Australia+Dairy+Company+Jordan" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">08:20<em>40 min</em></div><div class="c">
+        <h4>MOVE · MTR to Tung Chung</h4>
+        <p>Yau Ma Tei → Lai King on the red Tsuen Wan line, change to the orange Tung Chung line → Tung Chung. About HK$19. The last stretch runs along the water past the airport.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">09:05<em>25 min</em></div><div class="c">
+        <div class="tags"><span class="tag cost">~HK$140–170 per car · ≈ €15–19</span></div>
+        <h4>MOVE · Blue Lantau taxi to Ngong Ping</h4>
+        <p>From the taxi rank outside Tung Chung MTR. Say <strong>"Ngong Ping"</strong> (昂坪) — the driver will know. About 20–25 minutes on the winding road over the mountain. Priced per car, not per person: roughly <strong>€15–19 for the two of you</strong>, about €8–10 each. Have some cash — not every taxi takes cards or Octopus.</p>
+        <p><strong>Fallback:</strong> if the rank is empty, bus 23 leaves from the terminus right next to it — HK$20.40 (≈ €2.25) each, about 50 minutes. You'd reach the Buddha around 10:00 instead of 09:30.</p>
+        <div class="links"><a href="https://www.td.gov.hk/en/transport_in_hong_kong/public_transport/taxi/taxi_fare_of_hong_kong/index.html" target="_blank" rel="noopener">Official taxi fares</a> · <a href="https://hkbus.app/en/route/23-1-tung-chung-tat-tung-road-bus-terminus-ngong-ping" target="_blank" rel="noopener">Bus 23 fallback</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">09:30<em>75 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Tian Tan Buddha &amp; Po Lin Monastery</h4>
+        <p>268 steps up to a 34-metre bronze Buddha sitting on a mountain, with nothing but green ridgelines behind it. At this hour there will be incense smoke, monks, and almost no one else. Walk the ring of six bronze devas around the base, then come back down for <strong>Po Lin Monastery</strong> — scarlet and gold, enormous incense coils, and the smell of sandalwood over everything.</p>
+        <p>Then the <strong>Wisdom Path</strong>, ten minutes further on: 38 timber columns carved with the Heart Sutra, standing in a figure-of-eight on an open hillside. Usually empty. It's the better photograph of the two.</p>
+        <p><strong>Best frame:</strong> from the bottom of the stairs, low and centred, so the Buddha crowns the steps. Then from the platform looking back down over the monastery roofs.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Tian+Tan+Buddha+Ngong+Ping" target="_blank" rel="noopener">Map</a> · <a href="https://www.youtube.com/watch?v=CKUDMymP7qM" target="_blank" rel="noopener">Video</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">11:15<em>20 min</em></div><div class="c">
+        <h4>MOVE · Bus 21 to Tai O</h4>
+        <p>From Ngong Ping bus terminus, roughly HK$8 weekday. Twenty minutes downhill to the coast.</p>
+      </div></div>
+
+      <div class="step"><div class="t">11:40<em>2½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag eat">Lunch</span><span class="tag cost">HK$100–200</span></div>
+        <h4>Tai O fishing village</h4>
+        <p><strong>What it actually is:</strong> a fishing settlement on the far western tip of Lantau, built by the Tanka boat people — a community who historically lived on the water and were barred from owning land. Their houses are wooden shacks up on stilts, standing directly in a tidal creek, lashed together with walkways and linked by a footbridge. A couple of thousand people still live there. The whole place smells of dried shrimp paste, which is what it has made and sold for centuries.</p>
+        <p>It is not a museum and not a resort — it's a working, visibly poor village that happens to look like nowhere else in Hong Kong. That's exactly why it photographs the way it does, and also why some visitors come away uneasy about having wandered through it. Worth knowing before you commit: if that sits badly with you, skip it and take the cable car down early instead. If you do go, buy something — the dried seafood stalls and the sampan operators are the village's actual income.</p>
+        <p>Take the <strong>HK$30 sampan ride</strong> — twenty minutes out through the stilt houses and into the open sea to look for pink dolphins. Eat as you walk: grilled squid on a stick, giant fish balls, egg waffles, and the shrimp paste everything here smells of. Then climb ten minutes up to the <strong>Tai O Heritage Hotel</strong>, a whitewashed colonial police station on the headland, for the view back over the roofs.</p>
+        <p><strong>Best frame:</strong> the footbridge at the centre of the village looking down the creek — stilt houses both sides, boats below, mountains behind.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Tai+O+Fishing+Village" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">14:15<em>20 min</em></div><div class="c">
+        <h4>MOVE · Bus 21 back to Ngong Ping</h4>
+      </div></div>
+
+      <div class="step"><div class="t">14:50<em>25 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag book">Book online</span><span class="tag cost">HK$195 / 235</span></div>
+        <h4>Ngong Ping 360 cable car — one way, down</h4>
+        <p>5.7 km and 25 minutes, over a mountain ridge, across the water, past the airport runway, with the Hong Kong–Zhuhai–Macau Bridge on the horizon. <strong>HK$195 standard one-way, HK$235 for the Crystal Cabin with the glass floor</strong> — take the glass floor, it's forty dollars and it's the whole point.</p>
+        <p>Book online the night before so you skip the ticket queue. Going downhill in mid-afternoon you'll also be travelling against the queue, which by then is an hour long at the Tung Chung end.</p>
+        <p><strong>Best frame:</strong> the turn at Tower 2, where the cabin swings and the whole of Tung Chung Bay opens up. Shoot through the glass floor on the water section.</p>
+        <div class="links"><a href="https://www.np360.com.hk/en" target="_blank" rel="noopener">Book tickets</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">15:40<em>45 min</em></div><div class="c">
+        <h4>MOVE · MTR back to Kowloon</h4>
+        <p>Tung Chung → Lai King → Tsim Sha Tsui. Stay on past Yau Ma Tei — you're going straight to the harbour.</p>
+      </div></div>
+
+      <div class="step"><div class="t">16:45<em>45 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Signal Hill Garden &amp; the golden walls</h4>
+        <p>Two unhurried stops before the sunset. <strong>Signal Hill Garden</strong> is a small hill in the middle of Tsim Sha Tsui with a Victorian brick signal tower on top and a clear view over the harbour — 62 steps, almost nobody knows it's there. Then walk five minutes to <strong>China Hong Kong City</strong> on Canton Road, whose entire facade is gold panelling that turns molten in the last hour of light.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Signal+Hill+Garden+Tsim+Sha+Tsui" target="_blank" rel="noopener">Signal Hill</a> · <a href="https://www.google.com/maps/search/?api=1&query=China+Hong+Kong+City+Canton+Road" target="_blank" rel="noopener">Gold walls</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">17:35<em>50 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Sunset on the Tsim Sha Tsui promenade — 18:00</h4>
+        <p>The classic. Get to the waterfront by the Cultural Centre by 17:35 and watch the whole Hong Kong Island skyline go from gold to blue. <strong>Blue hour, 18:00–18:30, is when the photograph works</strong> — the sky still has colour in it and the towers are lit. Ten minutes later and the sky goes black and flat.</p>
+        <p><strong>Best frame:</strong> Avenue of Stars, low on the railing, with the water taking the reflections. If there's any chop, wait for a Star Ferry to cross into frame.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Avenue+of+Stars+Tsim+Sha+Tsui" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">18:40<em>75 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Dinner</span><span class="tag cost">HK$150–300</span></div>
+        <h4>Dinner in Tsim Sha Tsui</h4>
+        <p>Pick one: <strong>Ho Lee Fook</strong>-style modern Cantonese if you want a proper sit-down; <strong>Tak Fat Beef Balls</strong> or a cha chaan teng if you want fast and cheap; or <strong>Australia Dairy's</strong> neighbours on Parkes Street for the second half of the classics. If you want one splurge in TST, <strong>Spring Moon</strong> at the Peninsula does dim sum in a 1920s room.</p>
+      </div></div>
+
+      <div class="step"><div class="t">20:00<em>15 min</em></div><div class="c">
+        <div class="tags"><span class="tag cost">Free</span></div>
+        <h4>Symphony of Lights</h4>
+        <p>Nightly at 20:00, ten minutes of lasers across the harbour. Honest verdict: the show is mild, the setting is not. Watch it from the promenade you're already standing on and treat it as a reason to be there at night.</p>
+      </div></div>
+
+      <div class="step"><div class="t">20:30<em>30 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">HK$3.40</span></div>
+        <h4>Star Ferry to Central and back</h4>
+        <p>Eight minutes across Victoria Harbour on a 1950s ferry for less than half a euro, upper deck, wooden benches you flip to face the other way. Do the crossing, walk the Central waterfront for ten minutes, come straight back. At night, with the skyline on both sides, this beats every paid attraction in the city.</p>
+      </div></div>
+
+      <div class="step"><div class="t">21:30</div><div class="c">
+        <h4>MTR home — two stops</h4>
+        <p>Tsim Sha Tsui → Yau Ma Tei. If you've got anything left, Temple Street is still going.</p>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="d3">
+  <div class="day" style="--lc:var(--l-island)">
+    <div class="dayhead">
+      <span class="dnum">DAY 3</span>
+      <h3>Wed 14 Oct · The Island, end to end, finishing at the races</h3>
+      <span class="dline">Island line · HK Island</span>
+    </div>
+    <div class="daybody">
+
+      <div class="note calm" style="margin:14px 16px"><b>Why this day works.</b> Every stop after lunch sits on the blue Island line, in order, west to east: Central → Quarry Bay → Tin Hau → Causeway Bay. You do the Peak in the morning light, work east through the afternoon, climb a small hill for sunset at 18:00, and walk into the racecourse at 19:15. No doubling back, and the day ends on the loudest thing in the city.</div>
+
+      <div class="step"><div class="t">07:30<em>40 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Breakfast</span><span class="tag cost">HK$80–150 · ≈ €9–16</span></div>
+        <h4>Yum cha — proper morning dim sum</h4>
+        <p><strong>London Restaurant</strong>, 612 Nathan Road, Mong Kok — about 15 minutes' walk north. A big old-school dim sum hall that still does it the vanishing way: carpet, round tables, and ladies pushing <strong>steel trolleys</strong> between them. You flag a cart, point, and they stamp your card. Hong Kong has only about ten of these left.</p>
+        <p>Go early, when it's all retirees with newspapers. Get har gow, siu mai, char siu bao, cheung fun and an egg tart. Tap two fingers on the table when someone pours your tea. Bring cash. You can take the MTR to Tsim Sha Tsui from Mong Kok station right afterwards.</p>
+        <p><strong>Backup if it's closed:</strong> Kam Kong Restaurant, 56 Dundas Street, Mong Kok — also trolleys, opens 07:00.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=London+Restaurant+612+Nathan+Road+Mong+Kok" target="_blank" rel="noopener">London Restaurant</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kam+Kong+Restaurant+56+Dundas+Street+Mong+Kok" target="_blank" rel="noopener">Kam Kong (backup)</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">08:15<em>25 min</em></div><div class="c">
+        <h4>MOVE · MTR to Tsim Sha Tsui, then the Star Ferry</h4>
+        <p>Cross at 08:40 with the commuters, in morning light. HK$3.40. Land at Central Pier 7.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">08:55<em>40 min</em></div><div class="c">
+        <h4>MOVE · Bus 15 to The Peak</h4>
+        <p>From the terminus beneath Exchange Square, HK$13.40, upper deck front seat. It takes 40 minutes and climbs the whole way with the harbour dropping away below — and critically, <strong>there is no queue</strong>, while the Peak Tram line can run past 90 minutes. You are getting the same view for a fifth of the price.</p>
+      </div></div>
+
+      <div class="step"><div class="t">09:40<em>75 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Lugard Road loop — the postcard view</h4>
+        <p>This is the shot everyone knows, and you don't need a ticket for it. From the Peak Tower, take <strong>Lugard Road</strong>: a flat, shaded, 3.5 km circuit around the side of the mountain, 45 minutes, with the entire harbour laid out below you through the trees. The viewing platforms about ten minutes in are the ones photographers use.</p>
+        <p>Sky Terrace 428 costs HK$52 and is twenty metres higher than a free bench on Lugard Road. Skip it. Spend the time on the walk instead — and if you want a coffee with the same view, the <strong>Peak Lookout</strong> restaurant has a terrace.</p>
+        <p><strong>Best frame:</strong> the second viewing platform on Lugard Road, portrait orientation, with a branch framing the top edge. Morning light comes from behind you, which is exactly right.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Lugard+Road+Victoria+Peak" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">11:05<em>25 min</em></div><div class="c">
+        <h4>MOVE · Peak Tram down</h4>
+        <p>Now take the tram — HK$45 one way — because going down is a shorter queue and the tram itself is the experience: a 130-year-old funicular climbing at an angle steep enough that the buildings outside look like they're falling over. Lands you in Central.</p>
+      </div></div>
+
+      <div class="step"><div class="t">11:45<em>45 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Central: the escalator, Graham Street, Gage Street market</h4>
+        <p>Ride a stretch of the <strong>Mid-Levels escalator</strong> — 800 metres of covered outdoor escalator climbing through the middle of a city, the longest in the world. Get off at Gage Street and walk down through the <strong>wet market</strong>: butchers, fishmongers, vegetable stalls, all of it operating under a skyline of banks.</p>
+        <p><strong>Best frame:</strong> the <strong>Graham Street mural</strong> on the steep incline — a wall of old Hong Kong shopfronts painted in flat colour, with the real street running up beside it. Go now rather than at the weekend; it gets mobbed.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Graham+Street+Central+Hong+Kong" target="_blank" rel="noopener">Graham St</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">12:30<em>50 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Lunch</span><span class="tag cost">HK$40–80</span></div>
+        <h4>Kau Kee beef brisket, or Tsim Chai Kee wontons</h4>
+        <p><strong>Kau Kee</strong> on Gough Street: brisket braised until it collapses, in clear soup or curry, over flat rice noodles. Queue at the door, shared tables, forty minutes of your life well spent. <strong>Tsim Chai Kee</strong> on Wellington Street is the alternative — a bowl of prawn wonton noodles for HK$40, Michelin-listed, three minutes from order to table.</p>
+      </div></div>
+
+      <div class="step"><div class="t">13:25<em>40 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Man Mo Temple &amp; Hollywood Road</h4>
+        <p>Walk west along Hollywood Road past the antique shops and Cat Street to <strong>Man Mo Temple</strong> (1847). Inside, hundreds of giant incense coils hang from the ceiling and burn for weeks, filling the whole hall with smoke that catches the light coming through the doors. It is the best interior photograph in Hong Kong and it costs nothing.</p>
+        <p><strong>Best frame:</strong> stand just inside the main door, let your eyes adjust, and shoot up into the coils with the light shafts behind. Be quiet and quick — people are praying.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Man+Mo+Temple+Hollywood+Road" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">14:10<em>65 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Tai Kwun + PMQ</h4>
+        <p><strong>Tai Kwun</strong> is the old Central Police Station, magistracy and Victoria Prison, restored into a free arts complex — granite courtyards, colonial verandahs, and the <strong>JC Contemporary spiral staircase</strong>, a perfect aluminium helix that is one of the most photographed interiors in the city. Then <strong>PMQ</strong>, five minutes away: 1950s married police quarters turned into design studios, with a stacked concrete facade and open walkways.</p>
+        <p><strong>Best frame:</strong> JC Contemporary staircase, shot straight down the centre of the helix from the top floor.</p>
+        <div class="links"><a href="https://www.taikwun.hk/en/" target="_blank" rel="noopener">Tai Kwun</a> · <a href="https://www.pmq.org.hk/" target="_blank" rel="noopener">PMQ</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">15:20<em>50 min</em></div><div class="c">
+        <div class="tags"><span class="tag">Swap for the MTR</span><span class="cost">HK$3</span></div>
+        <h4>Ding Ding tram, Central → Quarry Bay</h4>
+        <p>Running since 1904, and the <strong>only all-double-decker tram fleet left in the world</strong>. Three Hong Kong dollars flat, however far you go. Climb to the upper deck, take the very front seat, and ride east through Wan Chai, Causeway Bay and North Point with the windows open and the city passing at walking pace an arm's length away.</p>
+        <p><strong>The trade:</strong> this replaces the 20-minute MTR hop to Quarry Bay and takes about 50, so it costs you half an hour on the tightest day of the trip. Worth it for the ride — but if you're already running late after Tai Kwun, take the train and save the tram for another afternoon. You tap in at the back and pay at the front when you get off.</p>
+        <div class="links"><a href="https://www.hktramways.com/en/" target="_blank" rel="noopener">hktramways.com</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">15:20<em>20 min</em></div><div class="c">
+        <h4>MOVE · MTR Central → Quarry Bay (Exit B)</h4>
+        <p>Blue line, east. HK$8.</p>
+      </div></div>
+
+      <div class="step"><div class="t">15:45<em>70 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>The Monster Building, Quarry Bay</h4>
+        <p>Five 1960s housing blocks — Yick Cheong, Yick Fat, Montane Mansion and neighbours — built into a single E-shaped mass around a courtyard, about 2,200 flats of pastel concrete and air-conditioning units stacked twenty storeys straight up with no sky visible. It was in <em>Transformers</em> and <em>Ghost in the Shell</em>, and in person it is genuinely overwhelming.</p>
+        <p><strong>Be decent about it.</strong> Real people live here and there's a banner asking visitors to seek permission before photographing. Go in quietly, shoot from the courtyard, stay ten minutes, don't use a tripod, don't shout, leave. That's the deal that keeps it open.</p>
+        <p><strong>Best frame:</strong> stand in the middle of the courtyard, phone flat on your palm pointing straight up, ultra-wide. Then get very low against the far wall for the vertical.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Montane+Mansion+Quarry+Bay" target="_blank" rel="noopener">Montane Mansion</a> · <a href="https://www.timeout.com/hong-kong/attractions/monster-building-yik-cheong-building" target="_blank" rel="noopener">Background</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">16:55<em>20 min</em></div><div class="c">
+        <h4>MOVE · Taxi from Quarry Bay to Braemar Hill</h4>
+        <p>Straight to the Braemar Hill bus terminus, where the trail starts. About 15–20 minutes, roughly <strong>HK$50–60 (≈ €6–7) for the car</strong>. It saves about 25 minutes over the MTR-plus-minibus route — and that's exactly what the Ding Ding tram costs you, so if you rode the tram, this puts you back on schedule. Say "Braemar Hill bus terminus" (寶馬山巴士總站).</p>
+        <p><strong>Fallback:</strong> MTR four stops west to Tin Hau, then minibus 25 or bus 25/27 up to the terminus (about HK$7).</p>
+      </div></div>
+
+      <div class="step"><div class="t">17:35<em>55 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Red Incense Burner Summit — sunset at 18:00</h4>
+        <p>From the Braemar Hill bus terminus it's a <strong>fifteen-minute climb</strong>, half a kilometre, easy, up to a bare rock outcrop that looks straight down the throat of Victoria Harbour with Kowloon opposite and the whole of North Point below. Locals rate it above the Peak, and on the evidence they're right — you're lower, closer, and the harbour fills the frame instead of sitting on the horizon.</p>
+        <p>Get there by 17:40 to claim a spot on the rock. Sunset is 18:00, and the real picture is at <strong>18:10–18:30</strong> when the city lights come up and the sky is still deep blue.</p>
+        <p><strong>Bring a phone torch.</strong> The descent after 18:40 is genuinely pitch black and the trail has loose rock.</p>
+        <div class="links"><a href="https://www.mstravelsolo.com/red-incense-burner-summit-braemar-hill-hike/" target="_blank" rel="noopener">Trail directions</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">18:45<em>15 min</em></div><div class="c">
+        <h4>MOVE · Taxi from Braemar Hill to Happy Valley</h4>
+        <p>About 15 minutes to the racecourse, roughly <strong>HK$55–70 (≈ €6–8) for the car</strong>. Street taxis are rare up there after dark, so <strong>book one with the HKTaxi or Uber app while you're still on the summit</strong>, to meet you at the bus terminus. Ask for Happy Valley Racecourse, Entrance G.</p>
+        <p><strong>Fallback:</strong> bus or minibus back to Tin Hau, then one MTR stop to Causeway Bay, Exit A — about 25 minutes.</p>
+      </div></div>
+
+      <div class="step"><div class="t">19:05<em>~4 hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag eat">Beer &amp; food</span><span class="tag cost">HK$10 entry</span></div>
+        <h4>Happy Valley night racing</h4>
+        <p>A floodlit turf track sitting in a bowl of apartment towers, eight races between roughly 19:00 and 23:00, and a crowd of bankers, retirees, tourists and very serious punters all drinking in a beer garden beside the rail. Entry is <strong>HK$10 tapped in with your Octopus at Entrance G</strong> — and tourists over 18 with a passport get the public enclosure free.</p>
+        <p>Minimum bet is HK$10. Put a few dollars on each race, stand at the rail for the final furlong, eat a sausage from the stand. Arriving by taxi at this time you'll catch almost the whole card. No singlets or flip-flops.</p>
+        <p><strong>Best frame:</strong> from the rail at the finish line, slow shutter as they come past, with the tower blocks lit behind the far turn.</p>
+        <div class="links"><a href="https://happywednesday.hkjc.com/en-US/plan-your-visit/" target="_blank" rel="noopener">Plan your visit</a> · <a href="https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=10" target="_blank" rel="noopener">Confirm the fixture</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">23:00</div><div class="c">
+        <h4>Home</h4>
+        <p>MTR runs until about 00:45. Causeway Bay → Yau Ma Tei with one change, around 30 minutes.</p>
+        <p><strong>Option — taxi:</strong> about 20–25 minutes through the Cross-Harbour Tunnel, roughly <strong>HK$140 (≈ €15) for the car</strong>. That includes the HK$50 tunnel charge, which passengers pay on top of the meter. After a 15-hour day, it's the kinder way home. There's a taxi queue outside the racecourse as the last race ends.</p>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="d4">
+  <div class="day" style="--lc:var(--l-sea)">
+    <div class="dayhead">
+      <span class="dnum">DAY 4</span>
+      <h3>Thu 15 Oct · Crossing to Macau — villages, egg tarts, Cotai at night</h3>
+      <span class="dline">Ferry from Kowloon · Macau</span>
+    </div>
+    <div class="daybody">
+
+      <div class="note calm" style="margin:14px 16px"><b>Route logic.</b> The 09:15 ferry from China Ferry Terminal is a twenty-minute walk from your hotel and lands at <strong>Taipa</strong>, on the Cotai side. So you do Taipa and Coloane in daylight, check into Hotel Riviera on the Peninsula in the late afternoon, catch sunset from the hill behind it, and come back out to Cotai for the lights. The old town gets Friday morning, empty.</div>
+
+      <div class="step"><div class="t">07:30</div><div class="c">
+        <h4>Check out, bags with you</h4>
+        <p>You're back at Shanghai Street tomorrow night, so pack light for Macau — most guesthouses will hold the rest. Worth asking.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">08:15<em>25 min</em></div><div class="c">
+        <h4>MOVE · Walk to China Ferry Terminal, Canton Road</h4>
+        <p>Twenty minutes south through Jordan, or one MTR stop and a short walk. Be at the terminal by 08:40 for the 09:15 — Hong Kong exit immigration is upstairs and takes ten to twenty minutes.</p>
+        <div class="links"><a href="https://www.turbojet.com.hk/en/whats-new/kowloon-taipa_resumption.aspx" target="_blank" rel="noopener">Kowloon–Taipa sailings</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">09:15<em>70 min</em></div><div class="c">
+        <div class="tags"><span class="tag book">Book ahead</span><span class="tag cost">~HK$194</span></div>
+        <h4>MOVE · TurboJET to Taipa</h4>
+        <p>Only two sailings a day on this route — 09:15 and 15:00 — so book it. Macau immigration on arrival, another 15–30 minutes. Clear by about 10:50.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">10:55<em>20 min</em></div><div class="c">
+        <h4>MOVE · Free casino shuttle to Galaxy</h4>
+        <p>Outside the terminal, every big resort runs a free bus and nobody checks whether you're a guest. Take the Galaxy or Venetian one. <strong>Learn this now — you may not pay for transport in Macau at all.</strong></p>
+        <div class="links"><a href="https://www.macaoshuttle.com/en" target="_blank" rel="noopener">Shuttle map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">11:20<em>2 hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag eat">Graze</span><span class="tag cost">HK$60–180</span></div>
+        <h4>Taipa Village, Rua do Cunha &amp; the Taipa Houses</h4>
+        <p>Three blocks of pedestrian food street backed by lanes of pastel colonial shophouses. Graze rather than sit: a <strong>pork chop bun</strong> at Sei Kee Cafe (a fried chop in a crusty roll, nothing else, and it's perfect), curry fish balls, <strong>serradura</strong>, and free samples of almond cookie and pork jerky pushed at you from every bakery counter on the street.</p>
+        <p>Then walk ten minutes to the <strong>Taipa Houses</strong> — five mint-green Portuguese villas on stilts above the wetland, with a tiled promenade and the Cotai skyline rising absurdly behind them. This is the best photograph in Macau after St Paul's.</p>
+        <p><strong>Best frame:</strong> the Taipa Houses from the far end of the promenade, so the row of green villas leads the eye into the casino towers. The contrast is the picture.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Rua+do+Cunha+Taipa" target="_blank" rel="noopener">Rua do Cunha</a> · <a href="https://www.google.com/maps/search/?api=1&query=Taipa+Houses+Museum+Macau" target="_blank" rel="noopener">Taipa Houses</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">13:30<em>25 min</em></div><div class="c">
+        <h4>MOVE · Bus 26A or 21A to Coloane village</h4>
+        <p>MOP 6 cash, exact change, or MOP 3 with a Macau Pass. Down the length of the island to the far end.</p>
+      </div></div>
+
+      <div class="step"><div class="t">14:00<em>1½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag eat">Egg tart</span><span class="tag cost">MOP 12+</span></div>
+        <h4>Coloane: Lord Stow's, and the yellow chapel</h4>
+        <p>A sleepy waterfront village of yellow and white buildings that feels like a Portuguese fishing town that drifted east. <strong>Lord Stow's Bakery</strong> is here — the original shop, where an English pharmacist invented the Macanese version of the Portuguese egg tart in 1989: MOP 12, caramelised almost black on top, still warm.</p>
+        <p><strong>On the Michelin question:</strong> Lord Stow's is <em>listed</em> in the MICHELIN Guide for Macau, but it has no star and no Bib Gourmand — it's a bakery counter, not a restaurant. So: a genuinely famous tart, properly good, about €1.30. Not a pilgrimage. <strong>Margaret's Café e Nata</strong> on the Peninsula makes an arguably better one and is five minutes from your hotel on Friday morning. If the tart is the only reason you'd come out to Coloane, do Margaret's instead and skip this stop — the village is the real argument for the trip.</p>
+        <p>Then the butter-yellow <strong>Chapel of St Francis Xavier</strong> on its little square, the library with green shutters, and the waterfront looking across to mainland China. If you want lunch proper, <strong>Restaurante Fernando</strong> near Hac Sa beach is the Portuguese institution.</p>
+        <p><strong>Best frame:</strong> the chapel square straight on, symmetrical, with the palm trees either side.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Lord+Stow%27s+Bakery+Coloane" target="_blank" rel="noopener">Lord Stow's</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">15:40<em>25 min</em></div><div class="c">
+        <h4>MOVE · Taxi from Coloane to Hotel Riviera</h4>
+        <p>Straight from the village to the hotel door, about 20–25 minutes, roughly <strong>MOP 130–150 (≈ €15) for the car</strong>. Macau taxis are black or yellow; show the driver the hotel name in Chinese: 濠璟酒店. Saves about 20–25 minutes over bus 26A, which stops constantly. If you skipped Coloane, ignore this step.</p>
+        <p><strong>Fallback:</strong> bus 26A toward the city (MOP 6 exact change), get off near Praia Grande.</p>
+      </div></div>
+
+      <div class="step"><div class="t">16:10<em>45 min</em></div><div class="c">
+        <h4>Check in — Hotel Riviera, Rua do Comendador Kou Ho Neng</h4>
+        <p>Below Penha Hill, looking over Sai Van Lake. Drop bags, shower, and go straight back out — sunset is at 18:00 and it's ten minutes uphill.</p>
+      </div></div>
+
+      <div class="step"><div class="t">17:20<em>60 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Penha Hill for sunset</h4>
+        <p>Literally above your hotel. Ten minutes up the hill to the <strong>Chapel of Our Lady of Penha</strong> and the old bishop's palace, with the whole peninsula, Sai Van Lake, the two bridges and Macau Tower spread out below and the Cotai towers glittering across the water. Almost nobody comes up here. It's the best free thing within 500 metres of where you're sleeping.</p>
+        <p><strong>Best frame:</strong> the terrace below the chapel, wide, with the lake catching the last light and the tower on the right.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Chapel+of+Our+Lady+of+Penha+Macau" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">18:45<em>1½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag eat">Dinner</span><span class="tag cost">HK$150–350</span></div>
+        <h4>Macanese dinner — the actual reason to stay overnight</h4>
+        <p>Macanese food is a 450-year-old fusion of Portuguese, Cantonese, Malay, Indian and African cooking that exists nowhere else, and this is your one shot at it. Order <strong>African chicken</strong> (coconut, chilli, peanut — invented in this city), <strong>minchi</strong> (minced beef, potato, fried egg), baked duck rice, and salt cod. The Portuguese wine list will be cheaper than anything comparable in Asia.</p>
+        <p><strong>Restaurante Litoral</strong> is the classic and needs booking. <strong>Henri's Galley</strong> and <strong>Ali Curry House</strong> are both on the waterfront a short walk from Hotel Riviera and don't.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Litoral+Macau" target="_blank" rel="noopener">Litoral</a> · <a href="https://www.google.com/maps/search/?api=1&query=Henri%27s+Galley+Macau" target="_blank" rel="noopener">Henri's Galley</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">20:30<em>2½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Option A: Cotai Strip after dark</h4>
+        <p><strong>Pick A or B tonight</strong> — or do a short version of both: the Wynn fountains first, then an hour at the Venetian tables.</p>
+        <p>Free shuttle back across. This is architectural absurdity at full volume and it costs nothing to walk through. In order:</p>
+        <p><strong>Wynn Palace</strong> first — the lake fountain show runs every 20 minutes, and a <strong>free cable car</strong> loops you slowly over the top of it. Then the <strong>Parisian</strong>, with its half-scale Eiffel Tower lit up (MOP 100 to go up, not necessary). Then the <strong>Venetian</strong>: indoor canals, gondoliers actually singing, a painted sky permanently set to late afternoon. Then the <strong>Londoner</strong> and its full-size Big Ben.</p>
+        <p>No photos on the gaming floors, and you don't have to gamble to walk through any of it.</p>
+        <p><strong>Best frame:</strong> from the Wynn Palace SkyCab at the top of its arc, looking down at the fountains mid-show.</p>
+      </div></div>
+
+      <div class="step"><div class="t">20:30<em>2½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag cost">Your budget</span></div>
+        <h4>Option B: Casinos — actually play</h4>
+        <p>Macau makes more from gambling than Las Vegas, and it's baccarat country — most tables are baccarat, which is also the simplest game in the building: bet on Player or Banker and the dealer does the rest. <strong>Sic bo</strong> (three dice) is the other easy one to try.</p>
+        <p><strong>Where:</strong></p>
+        <p><strong>Casino Lisboa / Grand Lisboa</strong>, Peninsula — about 10 minutes by taxi from your hotel. The old-school one, the lowest table minimums, and the most local crowd. Grand Lisboa's golden lotus tower next door is the most Macau building there is.</p>
+        <p><strong>The Venetian</strong>, Cotai — reachable by free shuttle, the biggest floor with the widest range of stakes, and the canals upstairs if you want a break.</p>
+        <p><strong>What it costs to sit down:</strong> live baccarat on the main floors starts around <strong>HK$100–500 (≈ €11–55) a hand on the Peninsula</strong> and <strong>HK$500–1,000+ (≈ €55–110) in Cotai</strong>. The cheap way in is the <strong>electronic and "stadium" baccarat</strong> — real dealers on big screens, bets from about <strong>HK$20–50 (≈ €2–5)</strong>. Chips are in Hong Kong dollars; buy them at the table or the cashier cage.</p>
+        <p><strong>The rules:</strong> you must be <strong>21+</strong> and <strong>carry your passport</strong> — it's checked at the door. No photos anywhere on the gaming floor. Smart casual; no one will stop you in a T-shirt, but avoid flip-flops and gym shorts. Unlike Vegas, <strong>drinks aren't free</strong>, and the main floors are smoke-free.</p>
+        <p><strong>Two tips:</strong> decide your budget before you walk in, bring exactly that in cash, and leave the cards at the hotel. And ignore anyone friendly who offers to show you how to play or lend you chips — only ever take chips from the dealer or the cage.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Casino+Lisboa+Macau" target="_blank" rel="noopener">Casino Lisboa</a> · <a href="https://www.google.com/maps/search/?api=1&query=The+Venetian+Macao+casino" target="_blank" rel="noopener">The Venetian</a> · <a href="https://www.macau-trip.com/guides/macau-casinos-guide/" target="_blank" rel="noopener">Casino guide</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">23:00</div><div class="c">
+        <h4>Shuttle home</h4>
+        <p>Casino shuttles run late; the last ones are usually around midnight. Or a taxi to Penha for roughly MOP 70.</p>
+      </div></div>
+
+      <div class="note" style="margin:14px 16px"><b>Swap, if you want the big show.</b> <strong>House of Dancing Water</strong> at City of Dreams runs at 19:30 in October — 80 minutes of acrobatics over a stage that turns into a swimming pool, from about HK$680. If you want it, move dinner to 17:30 in Taipa, see the show, and do Cotai afterwards. It's the priciest thing in this plan and the one people talk about for years. <a href="https://www.cityofdreamsmacau.com/en/house-of-dancing-water" target="_blank" rel="noopener">Book here</a></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="d5">
+  <div class="day" style="--lc:var(--l-sea)">
+    <div class="dayhead">
+      <span class="dnum">DAY 5</span>
+      <h3>Fri 16 Oct · The old town at dawn, back to Kowloon by night</h3>
+      <span class="dline">Macau Peninsula · then ferry</span>
+    </div>
+    <div class="daybody">
+
+      <div class="step"><div class="t">07:15<em>45 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>A-Ma Temple, before anyone else</h4>
+        <p>Ten minutes downhill from your hotel and the oldest thing in Macau — a Taoist temple built into the rock in 1488, which the city is named after. At 07:15 it's incense smoke, morning light through the banyans, elderly worshippers and no tourists whatsoever. Giant spiral incense coils hanging in the pavilions.</p>
+        <p><strong>Best frame:</strong> the upper pavilion, shooting back down through the hanging coils with the smoke catching the light.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=A-Ma+Temple+Macau" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">08:15<em>30 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Breakfast</span><span class="tag cost">MOP 30–60</span></div>
+        <h4>Egg tart and a galão</h4>
+        <p><strong>Margaret's Café e Nata</strong>, tucked in an alley off Avenida de Dom João IV, is the Peninsula's answer to Lord Stow's and half the locals prefer it. Tart plus a milky coffee, standing at the counter.</p>
+      </div></div>
+
+      <div class="step"><div class="t">08:50<em>2½ hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>The UNESCO walk, south to north</h4>
+        <p>One continuous route through thirty listed buildings, entirely on foot, and you're starting at the right end at the right hour. In order:</p>
+        <p><strong>Moorish Barracks</strong> (1874, yellow neo-Mughal arcades) → <strong>Lilau Square</strong> (the prettiest small square in Macau: ochre walls, a banyan, Portuguese wave paving) → <strong>Mandarin's House</strong> (free, but it doesn't open until 10:00 — either loop back after St Paul's or accept the exterior) → <strong>St Lawrence's Church</strong> → <strong>St Augustine's Square</strong> → <strong>Senado Square</strong>, the pastel heart of the city, with its black-and-white calçada rippling down the middle → <strong>St Dominic's Church</strong> (butter yellow and white) → up the lane, past every bakery in Macau handing out samples → <strong>the Ruins of St Paul's</strong>.</p>
+        <p>Get to St Paul's by <strong>09:45 at the latest</strong>. By eleven the day-trip coaches from Zhuhai arrive and the staircase is shoulder to shoulder. Climb the steps, go through the crypt behind the facade, and continue up to <strong>Monte Fort</strong> for cannons, city views and the Macau Museum (MOP 15).</p>
+        <p><strong>Best frames:</strong> Lilau Square early, empty and warm-lit. Senado Square shot low so the wave paving fills the bottom third. St Paul's from the foot of the stairs, centred, with the sky through the empty windows.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Lilau+Square+Macau" target="_blank" rel="noopener">Lilau Square</a> · <a href="https://www.google.com/maps/search/?api=1&query=Senado+Square+Macau" target="_blank" rel="noopener">Senado</a> · <a href="https://www.google.com/maps/search/?api=1&query=Ruins+of+St+Paul%27s+Macau" target="_blank" rel="noopener">St Paul's</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">11:30<em>60 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Lunch</span><span class="tag cost">MOP 50–200</span></div>
+        <h4>Wong Chi Kei, Senado Square</h4>
+        <p>Michelin-listed, on the square itself, and a bowl of wonton noodle or beef brisket runs about MOP 50. Fast, good, and right where you are. If you want the sit-down Macanese meal instead of last night's, this is the slot for <strong>Restaurante Litoral</strong>.</p>
+      </div></div>
+
+      <div class="step"><div class="t">12:45<em>2 hrs</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">MOP 165–3,500</span></div>
+        <h4>Macau Tower — deck, skywalk or bungy</h4>
+        <p>Ten minutes from your hotel. Observation deck at 223 m with a glass floor you can stand on, <strong>MOP 165</strong>. The <strong>Skywalk</strong> — a harnessed lap around the outside rim with no handrail — about <strong>MOP 900</strong>. Or the <strong>bungy from 233 m</strong>, the world's highest from a building: five seconds of freefall at 200 km/h, <strong>MOP 3,000–3,500</strong>. If either of you has ever thought about doing a bungy, this is the one to do.</p>
+        <p>Not feeling it? Then skip this slot entirely, take a longer lunch, and catch an earlier ferry back to Hong Kong — the afternoon is more useful there.</p>
+        <div class="links"><a href="https://www.macautower.com.mo/en/entertainment/adventure/" target="_blank" rel="noopener">Macau Tower</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">15:15<em>45 min</em></div><div class="c">
+        <h4>MOVE · Collect bags, free shuttle to Outer Harbour</h4>
+        <p>Outer Harbour Ferry Terminal is the close one and, unlike the Taipa–Kowloon route, sailings to Sheung Wan run through the day and into the evening — so you're not tied to a single departure.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">16:30<em>90 min</em></div><div class="c">
+        <div class="tags"><span class="tag cost">~HK$194</span></div>
+        <h4>MOVE · Ferry to Sheung Wan, then MTR home</h4>
+        <p>About 60 minutes on the water plus Hong Kong immigration. Sheung Wan → Yau Ma Tei is 20 minutes on the MTR. Back at Shanghai Street around 18:15.</p>
+      </div></div>
+
+      <div class="step"><div class="t">19:00<em>2 hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">HK$150–400</span></div>
+        <h4>Last big night: Ozone, 118 floors up</h4>
+        <p>Twenty minutes from your door at West Kowloon. <strong>The highest bar in the world</strong>, on top of the ICC tower — no entry fee, no minimum spend, you just pay for the drinks (HK$150–200 a cocktail) and the view comes free, which makes it better value than any observation deck in the city. Smart-casual; no shorts or flip-flops.</p>
+        <p>Cheaper version: <strong>Sky100</strong> in the same tower, HK$149 booked online, open to 20:30. Or free version: the <strong>West Kowloon Art Park</strong> lawn at the foot of the tower, with the harbour and the M+ facade lit up.</p>
+        <div class="links"><a href="https://www.ritzcarlton.com/en/hotels/hkgrz-the-ritz-carlton-hong-kong/dining/" target="_blank" rel="noopener">Ozone</a> · <a href="https://www.sky100.com.hk/en/" target="_blank" rel="noopener">Sky100</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">21:30</div><div class="c">
+        <div class="tags"><span class="tag eat">Late dinner</span><span class="tag cost">HK$100–200</span></div>
+        <h4>Back to the neighbourhood</h4>
+        <p>Whichever Temple Street or Woosung Street thing you didn't eat on Monday. Then pack — tomorrow ends at an airport.</p>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="d6">
+  <div class="day" style="--lc:var(--l-kwun)">
+    <div class="dayhead">
+      <span class="dnum">DAY 6</span>
+      <h3>Sat 17 Oct · Rainbow estates, a Tang monastery, and one last food crawl</h3>
+      <span class="dline">Kwun Tong line · Kowloon</span>
+    </div>
+    <div class="daybody">
+
+      <div class="note calm" style="margin:14px 16px"><b>Why today looks like this.</b> It's the first day of a three-day holiday weekend, so anywhere scenic will be packed — and you have a 22:30 flight with bags in a hotel lobby. So today runs along the green Kwun Tong line, which passes through Yau Ma Tei: four stops out, four stops back, nothing more than 25 minutes from your luggage, and it happens to contain the best photo circuit in Hong Kong.</div>
+
+      <div class="step"><div class="t">07:00<em>40 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Yau Ma Tei Wholesale Fruit Market at dawn</h4>
+        <p>Seven minutes from your door and one of the last working pre-war markets in the city — 1913 stone shophouses, traders' names painted on the gables, forklifts, crates of pomelos and dragonfruit, hand-lettered shutters. It runs hardest in the very early morning and it will not survive redevelopment forever.</p>
+        <p>It's a workplace, not an attraction. Stay out of the loading bays and don't block anyone.</p>
+        <p><strong>Best frame:</strong> down the covered arcade between the stalls, into the light, with the crates stacked either side.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Yau+Ma+Tei+Wholesale+Fruit+Market" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">07:50<em>40 min</em></div><div class="c">
+        <div class="tags"><span class="tag eat">Breakfast</span><span class="tag cost">HK$60–90</span></div>
+        <h4>Mido Cafe</h4>
+        <p>Four minutes away on Temple Street: a 1950s cha chaan teng that has changed almost nothing — green mosaic tiles, stained glass, iron window frames, and upstairs corner seats looking down over the Tin Hau temple square. Baked pork chop rice, thick French toast, and the milk tea. Go up to the first floor and take the window.</p>
+        <div class="links"><a href="https://www.openrice.com/en/hongkong/r-mido-cafe-yau-ma-tei-hong-kong-style-r2310" target="_blank" rel="noopener">OpenRice</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">08:45<em>20 min</em></div><div class="c">
+        <h4>MOVE · MTR Yau Ma Tei → Choi Hung (Exit C4)</h4>
+        <p>Green Kwun Tong line, direct, about HK$7.</p>
+      </div></div>
+
+      <div class="step"><div class="t">09:10<em>50 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Choi Hung Estate rainbow basketball courts</h4>
+        <p>The most photographed housing estate in Asia: a rooftop car park with basketball courts painted in bands of pink, orange, yellow, green and blue, and behind them a 1962 public housing block whose entire facade is a rainbow gradient. "Choi Hung" means rainbow.</p>
+        <p>Get there before 10:00 — by midday it's a queue of people taking turns on the centre circle. The courts are on the roof of the multi-storey car park; take the stairs or lift up from ground level. <strong>The estate is scheduled for phased redevelopment from 2028</strong>, so this is a genuinely finite photograph.</p>
+        <p><strong>Best frame:</strong> stand on the far baseline, low, so the painted court lines converge and the rainbow block fills the background. Wear a solid bright colour — it's the difference between a good shot and a great one.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Choi+Hung+Estate+basketball+court" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">10:05<em>25 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Ping Shek Estate — the sci-fi one</h4>
+        <p>Five minutes away, out of Choi Hung station Exit A2. Where Choi Hung is colour, Ping Shek is geometry: identical stacked concrete walkways receding into a vanishing point, the frame that looks computer-generated and isn't. Nobody else goes.</p>
+        <p><strong>Best frame:</strong> centre of the walkway, symmetrical, shooting down the corridor of balconies. Residents live here — quick and quiet.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Ping+Shek+Estate+Hong+Kong" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">10:35<em>15 min</em></div><div class="c">
+        <h4>MOVE · MTR Choi Hung → Kowloon Bay</h4>
+        <p>One stop east, then about eight minutes on foot.</p>
+      </div></div>
+
+      <div class="step"><div class="t">10:55<em>30 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Lok Wah South Estate — the blue circles</h4>
+        <p>On the roof of the estate's car park: a play area of concentric blue and white rings with a ribbed shade canopy that throws striped shadows across the whole thing when the sun is out. Surreal from above, and mid-morning is exactly when the shadows are best.</p>
+        <p><strong>Best frame:</strong> stand in the centre of the rings and have the other person shoot from the raised edge, straight down.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Lok+Wah+South+Estate+Car+Park" target="_blank" rel="noopener">Map</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">11:30<em>15 min</em></div><div class="c">
+        <h4>MOVE · MTR to Diamond Hill (Exit C2)</h4>
+      </div></div>
+
+      <div class="step"><div class="t">11:50<em>90 min</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Chi Lin Nunnery &amp; Nan Lian Garden</h4>
+        <p>The best free hour in Hong Kong. A Tang-dynasty-style Buddhist complex of sixteen timber halls built entirely of interlocking wood — <strong>not a single nail</strong> — around courtyards of lotus ponds, with tower blocks rising directly behind the roofs. Attached to it, <strong>Nan Lian Garden</strong>: a scholar's garden of clipped pines, bonsai, limestone, koi, and a vermilion-and-gold <strong>Pavilion of Absolute Perfection</strong> standing in the middle of a jade-green pond.</p>
+        <p>Nunnery 09:00–16:30, garden 07:00–21:00, both free. No photography inside the halls or of the statues — the courtyards and the garden are fine.</p>
+        <p><strong>Best frame:</strong> the golden pavilion across the pond, with its reflection, shot from the curved bridge on the north side. Then the nunnery courtyard with the apartment towers deliberately in shot behind the temple roof — that contrast is Hong Kong in one picture.</p>
+        <div class="links"><a href="https://www.discoverhongkong.com/eng/place-to-go/travel.guide-chi-lin-nunnery-and-nan-lian-garden.html" target="_blank" rel="noopener">Visit info</a></div>
+      </div></div>
+
+      <div class="step move"><div class="t">13:25<em>25 min</em></div><div class="c">
+        <h4>MOVE · MTR to Sham Shui Po (Exit C2)</h4>
+        <p>Back west through Yau Ma Tei and two stops beyond. About 25 minutes.</p>
+      </div></div>
+
+      <div class="step"><div class="t">13:55<em>2 hrs</em></div><div class="c">
+        <div class="tags"><span class="tag star">Spectacular</span><span class="tag eat">The food crawl</span><span class="tag cost">HK$120–200</span></div>
+        <h4>Sham Shui Po — eat everything</h4>
+        <p>Hong Kong's poorest district and its best eating. Do it as a crawl, not a meal, in this order:</p>
+        <p><strong>Hop Yik Tai</strong> — rice-roll cheung fun with sesame, peanut and sweet sauce, HK$12, Michelin-listed, eaten standing on the pavement. <strong>Kung Wo Beancurd Factory</strong> on Pei Ho Street — silken tofu pudding and pan-fried tofu with fish paste, under HK$20, multiple Bib Gourmands. <strong>Lau Sum Kee</strong> — noodles still pressed with a bamboo pole, served dry with dried shrimp roe. <strong>Tim Ho Wan</strong>, the original branch of the cheapest Michelin-starred restaurant in the world: the baked barbecue pork buns, nothing else matters.</p>
+        <p>In between, walk <strong>Apliu Street</strong> — a flea market of electronics, cables, vintage cameras, hi-fi and pure junk — and the fabric and bead streets around Yu Chau Street.</p>
+        <div class="links"><a href="https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/tim-ho-wan-sham-shui-po" target="_blank" rel="noopener">Tim Ho Wan</a> · <a href="https://www.youtube.com/watch?v=rbVzLR2cCxI" target="_blank" rel="noopener">Video of the street</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">15:55<em>50 min</em></div><div class="c">
+        <div class="tags"><span class="tag photo">Photo</span><span class="tag cost">Free</span></div>
+        <h4>Nam Shan Estate arches + Garden Hill</h4>
+        <p>Two last frames, five minutes apart. <strong>Nam Shan Estate</strong>, hidden behind the market: a pair of mint-green concrete arches on a raised community deck, framing the housing blocks behind — take the one where the apartments fill the opening.</p>
+        <p>Then <strong>Garden Hill</strong>, from Sham Shui Po Exit D2 via Berwick Street: a <strong>ten-minute stair climb</strong> to a bare hilltop sitting right on top of old Kowloon, with the low 1960s rooftops in the foreground and the ICC tower on the horizon. Free, easy, and one of the great underrated views in the city.</p>
+        <p><strong>Best frame:</strong> from the Garden Hill summit, wide, low sun coming in from the west across the rooftops.</p>
+        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Garden+Hill+Sham+Shui+Po" target="_blank" rel="noopener">Garden Hill</a> · <a href="https://www.google.com/maps/search/?api=1&query=Nam+Shan+Estate+Shek+Kip+Mei" target="_blank" rel="noopener">Nam Shan Estate</a></div>
+      </div></div>
+
+      <div class="step"><div class="t">16:55<em>60 min</em></div><div class="c">
+        <h4>Back to Shanghai Street, collect bags</h4>
+        <p>Two MTR stops. Change, repack, and have one last bowl of wonton noodles at whatever shop is nearest — you'll be eating airline food in six hours.</p>
+      </div></div>
+
+      <div class="step move"><div class="t">18:00<em>60 min</em></div><div class="c">
+        <div class="tags"><span class="tag cost">HK$34.60</span></div>
+        <h4>MOVE · Bus A21 from Nathan Road to HKG</h4>
+        <p>Four minutes from the door with your bags, straight to the airport, no changes. Leaves you at Terminal 1 by around 19:15.</p>
+        <p><strong>Turkish isn't on the Airport Express in-town check-in list</strong>, so there's no dropping bags downtown — the hotel lobby is your left luggage all day.</p>
+      </div></div>
+
+      <div class="step"><div class="t">19:15</div><div class="c">
+        <h4>HKG Terminal 1 · check in for 22:30</h4>
+        <p>Three hours before a long-haul departure on a holiday weekend is the right amount, not an excess. Spend the slack airside.</p>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="photos">
+<style>
+.recon{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:11px;margin-bottom:8px}
+.rc{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:13px 14px 11px;display:flex;flex-direction:column}
+.rc .when{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.rc h4{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:-.01em;margin:0 0 5px;line-height:1.25}
+.rc p{margin:0 0 10px;font-size:14px;line-height:1.45;font-weight:300;color:var(--ink-2);flex:1}
+.rl{display:flex;gap:5px;flex-wrap:wrap}
+.rl a{font-family:var(--disp);font-size:11.5px;font-weight:600;text-decoration:none;padding:3px 9px;border-radius:100px;border:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
+.rl a:hover{border-color:var(--accent);color:var(--accent)}
+.rl a.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.rl a.pri:hover{opacity:.85;color:#fff}
+.daylabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.daylabel:first-of-type{margin-top:14px}
+.step .links a.seeimg{color:var(--accent);font-weight:600}
+</style>
+
+  <h2>Photo recon — see every spot before you go</h2>
+  <p class="sub">Sixty-two spots, each one tap from real photographs taken at that exact place. <strong>Images</strong> opens a Google Images grid, <strong>Maps</strong> opens the visitor photo gallery for the pin, <strong>IG</strong> opens the Instagram tag. Each card also tells you the one frame worth walking there for.</p>
+
+  <div class="note"><b>Why links and not embedded photos.</b> These pages can't load images from other sites — the artifact runtime blocks every external image by design — and I'm not going to re-host other people's photographs to get around it. So instead every spot below is a single tap from the live grid. Two practical notes: <strong>Google Images is the reliable one</strong>, it works logged out on any device. <strong>Instagram now shows a login wall to logged-out visitors on desktop</strong> — but on your phone, with the app installed, those tag links open straight into the app and work properly. So: browse on the laptop with the Images links, and save the IG ones for the phone.</div>
+
+  <div class="daylabel">Mon 12 Oct · arrival night</div>
+  <div class="recon">
+    <div class="rc"><span class="when">20:00 · Yau Ma Tei</span><h4>Temple Street Night Market</h4><p>Straight down the street at the Public Square Street junction — a tunnel of neon above the stalls.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Temple+Street+Night+Market+Hong+Kong+neon+night" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Temple+Street+Night+Market+Yau+Ma+Tei" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/templestreetnightmarket/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">21:30 · Mong Kok</span><h4>Sai Yeung Choi Street South</h4><p>Chest height, looking north into the stacked neon. Put a crowd on a crossing in the foreground.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Sai+Yeung+Choi+Street+South+Mong+Kok+neon+signs" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Sai+Yeung+Choi+Street+South+Mong+Kok" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/mongkok/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="daylabel">Tue 13 Oct · Lantau &amp; the harbour</div>
+  <div class="recon">
+    <div class="rc"><span class="when">09:30 · Ngong Ping</span><h4>Tian Tan Buddha</h4><p>Low and centred from the foot of the 268 steps, so the Buddha crowns the staircase. Empty at this hour.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tian+Tan+Big+Buddha+Lantau+steps" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Tian+Tan+Buddha+Ngong+Ping" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/tiantanbuddha/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">10:30 · Ngong Ping</span><h4>Wisdom Path</h4><p>38 timber sutra columns in a figure-of-eight on an open hillside. Usually completely deserted.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Wisdom+Path+Ngong+Ping+Lantau" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Wisdom+Path+Ngong+Ping" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/wisdompath/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">12:00 · Lantau</span><h4>Tai O stilt houses</h4><p>From the central footbridge down the creek — houses both sides, boats below, mountains behind.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tai+O+stilt+houses+fishing+village+Lantau" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Tai+O+Fishing+Village" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/taiofishingvillage/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">13:30 · Lantau</span><h4>Tai O Heritage Hotel headland</h4><p>Above the old police station, looking back over the village roofs to the open sea.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tai+O+Heritage+Hotel+view+village" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Tai+O+Heritage+Hotel" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/taio/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">14:50 · cable car</span><h4>Ngong Ping 360 Crystal Cabin</h4><p>The swing at Tower 2 where the bay opens. Then straight down through the glass floor on the water leg.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Ngong+Ping+360+crystal+cabin+glass+floor+view" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Ngong+Ping+360+Cable+Car" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/ngongping360/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">16:45 · TST</span><h4>Signal Hill Garden</h4><p>Victorian brick signal tower with the harbour behind it. 62 steps, and almost nobody knows it's there.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Signal+Hill+Garden+Blackhead+Point+Tower+Tsim+Sha+Tsui" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Signal+Hill+Garden+Tsim+Sha+Tsui" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/signalhillgarden/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">17:15 · Canton Rd</span><h4>China Hong Kong City gold walls</h4><p>An entire facade of gold panelling that goes molten in the last hour of light.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=China+Hong+Kong+City+gold+building+Canton+Road" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=China+Hong+Kong+City+Canton+Road" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/chinahongkongcity/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">18:00–18:30 · TST</span><h4>Tsim Sha Tsui promenade, blue hour</h4><p>Low on the railing at Avenue of Stars with the skyline reflected. Wait for a Star Ferry to cross in.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tsim+Sha+Tsui+promenade+skyline+blue+hour+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Avenue+of+Stars+Tsim+Sha+Tsui" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/avenueofstars/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">20:30 · harbour</span><h4>Star Ferry at night</h4><p>Upper deck, shooting back at the Kowloon side as you pull away from the pier.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Star+Ferry+Hong+Kong+night+harbour" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Star+Ferry+Pier+Tsim+Sha+Tsui" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/starferry/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="daylabel">Wed 14 Oct · Hong Kong Island</div>
+  <div class="recon">
+    <div class="rc"><span class="when">09:40 · The Peak</span><h4>Lugard Road viewpoint</h4><p>The postcard frame, free. Second platform, portrait, a branch across the top edge, sun behind you.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Lugard+Road+viewpoint+Victoria+Peak+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Lugard+Road+Victoria+Peak" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/lugardroad/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">11:05 · The Peak</span><h4>Peak Tram</h4><p>Looking back down the carriage as the towers outside tilt past the window at an impossible angle.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Peak+Tram+Hong+Kong+inside+carriage+tilted+view" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Peak+Tram+Lower+Terminus+Hong+Kong" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/peaktram/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">11:45 · Central</span><h4>Mid-Levels escalator</h4><p>From a moving step, looking down the covered run with the street life carrying on below it.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Central+Mid-Levels+escalator+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Central+Mid-Levels+Escalator" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/midlevelsescalator/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">12:10 · Central</span><h4>Graham Street mural</h4><p>Painted old-Hong-Kong shopfronts with the real steep street running up alongside them.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Graham+Street+mural+Central+Hong+Kong+old+shopfronts" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Graham+Street+mural+Central+Hong+Kong" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/grahamstreet/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">13:25 · Sheung Wan</span><h4>Man Mo Temple incense coils</h4><p>Just inside the door, shooting up into the burning coils with the light shafts behind. Best interior in the city.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Man+Mo+Temple+Hong+Kong+incense+coils+interior" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Man+Mo+Temple+Hollywood+Road" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/manmotemple/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">14:10 · Central</span><h4>JC Contemporary spiral stair, Tai Kwun</h4><p>Straight down the centre of the aluminium helix from the top floor. Free entry.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tai+Kwun+JC+Contemporary+spiral+staircase" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Tai+Kwun+Centre+for+Heritage+and+Arts" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/taikwun/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">15:45 · Quarry Bay</span><h4>The Monster Building</h4><p>Dead centre of the courtyard, phone flat on your palm pointing straight up, ultra-wide. Ten minutes, quietly, then leave.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Monster+Building+Quarry+Bay+Yick+Cheong+courtyard" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Montane+Mansion+Quarry+Bay" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/monsterbuilding/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">18:10–18:30 · Braemar Hill</span><h4>Red Incense Burner Summit</h4><p>The harbour filling the whole frame as the lights come up. 15-minute climb. Torch for the way down.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Red+Incense+Burner+Summit+Braemar+Hill+sunset+skyline" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Red+Incense+Burner+Summit+Braemar+Hill" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/redincenseburnersummit/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">20:00 · Happy Valley</span><h4>Happy Valley racecourse</h4><p>From the rail at the finish, slow shutter as they come past, tower blocks lit behind the far turn.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Happy+Valley+Racecourse+night+racing+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Happy+Valley+Racecourse+Hong+Kong" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/happyvalleyracecourse/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="daylabel">Thu 15 Oct · Taipa, Coloane, Cotai</div>
+  <div class="recon">
+    <div class="rc"><span class="when">11:30 · Taipa</span><h4>Rua do Cunha</h4><p>Narrow pedestrian lane, pastel shophouses, bakery signage stacked down both sides.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Rua+do+Cunha+Taipa+Macau+food+street" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Rua+do+Cunha+Taipa" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/ruadocunha/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">12:30 · Taipa</span><h4>Taipa Houses</h4><p>Mint-green villas leading the eye into the Cotai towers behind. The contrast <em>is</em> the picture.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Taipa+Houses+Museum+Macau+green+villas" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Taipa+Houses+Museum+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/taipahouses/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">14:30 · Coloane</span><h4>Chapel of St Francis Xavier</h4><p>Square on, symmetrical, palms either side. Butter-yellow against blue.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Chapel+of+St+Francis+Xavier+Coloane+Macau" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Chapel+of+St+Francis+Xavier+Coloane" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/coloane/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">17:40–18:20 · Macau</span><h4>Penha Hill</h4><p>Terrace below the chapel: Sai Van lake, both bridges, Macau Tower right, Cotai lighting up behind. Ten minutes above your hotel.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Penha+Hill+Macau+view+chapel+sunset" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Chapel+of+Our+Lady+of+Penha+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/penhahill/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">21:00 · Cotai</span><h4>Wynn Palace SkyCab &amp; fountains</h4><p>From the top of the cable car's arc, looking straight down at the fountain show mid-performance. Free.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Wynn+Palace+Macau+SkyCab+fountain+show+night" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Wynn+Palace+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/wynnpalace/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">22:00 · Cotai</span><h4>The Venetian canals</h4><p>From a bridge over the water, painted sky above, gondola coming through underneath.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Venetian+Macao+indoor+canal+gondola+painted+sky" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=The+Venetian+Macao" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/venetianmacao/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">20:30 · Cotai</span><h4>The Parisian Eiffel Tower</h4><p>Half-scale and fully lit after dark. Shoot from the Cotai Strip pavement opposite, not from the base.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Parisian+Macao+Eiffel+Tower+night+lights" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=The+Parisian+Macao" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/parisianmacao/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="daylabel">Fri 16 Oct · the Macau old town</div>
+  <div class="recon">
+    <div class="rc"><span class="when">07:15 · Macau</span><h4>A-Ma Temple</h4><p>Upper pavilion, shooting down through the hanging incense coils with smoke catching the morning light. Empty at this hour.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=A-Ma+Temple+Macau+incense+coils" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=A-Ma+Temple+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/amatemple/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">08:50 · Macau</span><h4>Lilau Square</h4><p>Ochre walls, a banyan, Portuguese wave paving. The prettiest small square in Macau and warm-lit this early.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Lilau+Square+Macau" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Lilau+Square+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/lilausquare/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">09:20 · Macau</span><h4>Senado Square</h4><p>Shoot low so the black-and-white calçada wave paving fills the bottom third of the frame.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Senado+Square+Macau+wave+pavement" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Senado+Square+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/senadosquare/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">09:45 · Macau</span><h4>Ruins of St Paul's</h4><p>Foot of the stairs, centred, sky visible through the empty windows. Before 10:00, or it's a crowd shot.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Ruins+of+St+Paul%27s+Macau+facade+staircase" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Ruins+of+St+Paul%27s+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/ruinsofstpauls/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">10:30 · Macau</span><h4>Monte Fort</h4><p>Cannons along the rampart aimed at the Grand Lisboa casino. The single most Macau image there is.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Monte+Fort+Macau+cannon+Grand+Lisboa+view" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Mount+Fortress+Monte+Fort+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/montefort/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">13:00 · Macau</span><h4>Macau Tower</h4><p>The glass floor from above at 223 m — or, if you're jumping, somebody else's photo of you at 200 km/h.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Macau+Tower+bungy+jump+glass+floor+observation+deck" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Macau+Tower" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/macautower/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">19:30 · West Kowloon</span><h4>Ozone, 118th floor</h4><p>The world's highest bar, looking down on the harbour. No entry fee — you just buy a drink.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Ozone+bar+Ritz+Carlton+Hong+Kong+ICC+view" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Ozone+Ritz-Carlton+Hong+Kong" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/ozonehongkong/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="daylabel">Sat 17 Oct · the Kowloon circuit</div>
+  <div class="recon">
+    <div class="rc"><span class="when">07:00 · Yau Ma Tei</span><h4>Wholesale Fruit Market</h4><p>Down the covered arcade into the light, crates stacked both sides. A workplace, so keep out of the loading bays.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Yau+Ma+Tei+Wholesale+Fruit+Market" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Yau+Ma+Tei+Wholesale+Fruit+Market" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/yaumateifruitmarket/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">09:10 · Choi Hung</span><h4>Choi Hung Estate rainbow courts</h4><p>Far baseline, low, court lines converging, rainbow block behind. Wear one solid bright colour. Demolition starts 2028.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Choi+Hung+Estate+rainbow+basketball+court+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Choi+Hung+Estate+basketball+court" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/choihungestate/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">10:05 · Choi Hung</span><h4>Ping Shek Estate</h4><p>Dead centre of the walkway, symmetrical, down the corridor of balconies. Looks rendered. Isn't.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Ping+Shek+Estate+Hong+Kong+architecture+photography" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Ping+Shek+Estate+Hong+Kong" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/pingshekestate/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">10:55 · Kowloon Bay</span><h4>Lok Wah South Estate car park</h4><p>Stand in the blue rings, shoot from the raised edge straight down. Needs sun for the striped shadows.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Lok+Wah+South+Estate+car+park+blue+circles+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Lok+Wah+South+Estate+Car+Park" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/lokwahsouthestate/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">12:00 · Diamond Hill</span><h4>Nan Lian Garden golden pavilion</h4><p>The vermilion-and-gold pavilion with its reflection, from the curved bridge on the north side. Free.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Nan+Lian+Garden+golden+pavilion+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Nan+Lian+Garden+Diamond+Hill" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/nanliangarden/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">12:30 · Diamond Hill</span><h4>Chi Lin Nunnery</h4><p>The temple courtyard with the apartment towers deliberately in shot behind the roof. No photos inside the halls.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Chi+Lin+Nunnery+Hong+Kong+courtyard+skyscrapers" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Chi+Lin+Nunnery+Diamond+Hill" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/chilinnunnery/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">14:00 · Sham Shui Po</span><h4>Apliu Street flea market</h4><p>Cables, vintage cameras, hi-fi and junk spread on the pavement under the signs. Shoot from waist height, walking.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Apliu+Street+flea+market+Sham+Shui+Po" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Apliu+Street+Sham+Shui+Po" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/apliustreet/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">16:00 · Shek Kip Mei</span><h4>Nam Shan Estate arches</h4><p>Two mint-green concrete arches on a raised deck. Take the one where the housing blocks fill the opening.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Nam+Shan+Estate+green+arch+Hong+Kong+photo+spot" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Nam+Shan+Estate+Shek+Kip+Mei" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/namshanestate/" target="_blank" rel="noopener">IG</a></div></div>
+
+    <div class="rc"><span class="when">16:30 · Sham Shui Po</span><h4>Garden Hill</h4><p>Ten-minute stair climb. Old low rooftops in front, ICC tower on the horizon, late sun from the west.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Garden+Hill+Sham+Shui+Po+view+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Garden+Hill+Sham+Shui+Po" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/gardenhill/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="daylabel">Also in the plan — more angles</div>
+  <div class="recon">
+    <div class="rc"><span class="when">Wed 15:20 · Island line</span><h4>Ding Ding tram</h4><p>Front seat, upper deck, looking down the tracks as the shopfronts pass. Or shoot the tram itself from a crossing.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Hong+Kong+ding+ding+tram+double+decker+upper+deck" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Hong+Kong+Tramways+Central" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/hktram/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Tue 10:00 · Ngong Ping</span><h4>Po Lin Monastery</h4><p>Scarlet and gold halls, giant incense coils, sandalwood smoke over everything.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Po+Lin+Monastery+Ngong+Ping+interior+incense" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Po+Lin+Monastery+Lantau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/polinmonastery/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Mon 19:20 · Yau Ma Tei</span><h4>Tin Hau Temple &amp; banyan square</h4><p>The temple under old banyans with fortune tellers set up in the square. Three minutes from your bed.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tin+Hau+Temple+Yau+Ma+Tei+banyan+square" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Tin+Hau+Temple+Yau+Ma+Tei" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/tinhautemple/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Mon 20:15 · Yau Ma Tei</span><h4>Woosung Street dai pai dong</h4><p>Plastic stools on the pavement, strip lights, woks throwing flame, beer in ice buckets.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Hong+Kong+dai+pai+dong+street+food+night+wok" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Woosung+Street+Temporary+Cooked+Food+Hawker+Bazaar" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/daipaidong/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Mon 20:15 · Temple St</span><h4>Hing Kee claypot rice</h4><p>Charcoal-fired clay pots with the crust at the bottom. Lift the lid and shoot the steam.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=claypot+rice+Hong+Kong+Temple+Street+Hing+Kee" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Hing+Kee+Restaurant+Temple+Street" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/claypotrice/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Tue 07:15 · Jordan</span><h4>Australia Dairy Company</h4><p>Scrambled egg like custard, macaroni soup, milk tea. Famous for 12-minute service.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Australia+Dairy+Company+scrambled+eggs+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Australia+Dairy+Company+Jordan" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/australiadairycompany/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Sat 07:50 · Temple St</span><h4>Mido Cafe interior</h4><p>Green mosaic tile, stained glass, iron window frames. Take the first-floor corner window.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Mido+Cafe+Hong+Kong+interior+vintage" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Mido+Cafe+Temple+Street" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/midocafe/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Wed 12:30 · Central</span><h4>Kau Kee beef brisket</h4><p>Brisket collapsed into curry broth over flat rice noodles. Shared tables, queue at the door.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Kau+Kee+beef+brisket+noodles+Hong+Kong" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Kau+Kee+Restaurant+Gough+Street" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/kaukee/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Sat 14:00 · Sham Shui Po</span><h4>Tim Ho Wan pork buns</h4><p>Crisp sugared tops, molten char siu inside. The cheapest Michelin star in the world.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Tim+Ho+Wan+baked+barbecue+pork+buns" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Tim+Ho+Wan+Sham+Shui+Po" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/timhowan/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Sat 14:00 · Sham Shui Po</span><h4>Hop Yik Tai cheung fun</h4><p>Rice rolls in sesame, peanut and sweet sauce, HK$12, eaten standing on the pavement.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Hop+Yik+Tai+cheung+fun+Sham+Shui+Po" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Hop+Yik+Tai+Sham+Shui+Po" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/cheungfun/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Wed 14:10 · Central</span><h4>PMQ</h4><p>1950s married police quarters turned design studios — stacked concrete and open walkways.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=PMQ+Hong+Kong+building+architecture" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=PMQ+Hong+Kong+Aberdeen+Street" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/pmqhk/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Wed 13:25 · Sheung Wan</span><h4>Hollywood Road &amp; Cat Street</h4><p>Antique shops, street art, and the steep lanes running down to the harbour.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Hollywood+Road+Sheung+Wan+antiques+street+art" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Hollywood+Road+Sheung+Wan" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/hollywoodroad/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Tue 20:00 · TST</span><h4>Symphony of Lights</h4><p>Lasers off the Island skyline at 20:00. Shoot wide and let the harbour do the work.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Symphony+of+Lights+Hong+Kong+harbour+lasers" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Hong+Kong+Cultural+Centre+waterfront" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/symphonyoflights/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Mon 21:30 · Mong Kok</span><h4>Ladies' Market</h4><p>Stall canopies stacked down Tung Choi Street, open till 23:00.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Ladies+Market+Mong+Kok+night+stalls" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Ladies+Market+Tung+Choi+Street" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/ladiesmarket/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Thu 18:45 · Macau</span><h4>African chicken &amp; Macanese food</h4><p>Coconut, chilli and peanut — a dish invented in this city and served nowhere else.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=African+chicken+Macanese+food+Macau" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Litoral+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/macanesefood/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Thu 22:00 · Cotai</span><h4>Londoner Big Ben &amp; Galaxy dome</h4><p>A full-size Big Ben on the Cotai Strip, and Galaxy's colour-shifting dome next door.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Londoner+Macao+Big+Ben+night+Galaxy+Macau+dome" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=The+Londoner+Macao" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/londonermacao/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Fri 09:20 · Macau</span><h4>St Dominic's Church</h4><p>Butter yellow and white, 16th century, on the lane between Senado and St Paul's.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=St+Dominic%27s+Church+Macau+yellow+facade" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=St+Dominic%27s+Church+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/stdominicsmacau/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Fri 10:30 · Macau</span><h4>Na Tcha Temple &amp; Old City Walls</h4><p>A tiny temple tucked against a surviving stretch of the 16th-century wall, right beside St Paul's.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Na+Tcha+Temple+Macau+old+city+walls" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Na+Tcha+Temple+Macau" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/natchatemple/" target="_blank" rel="noopener">IG</a></div></div>
+    <div class="rc"><span class="when">Fri 11:30 · Macau</span><h4>Wong Chi Kei noodles</h4><p>Michelin-listed wonton and brisket noodles on Senado Square for MOP 50.</p><div class="rl"><a class="pri" href="https://www.google.com/search?udm=2&q=Wong+Chi+Kei+noodles+Macau+Senado+Square" target="_blank" rel="noopener">Images</a><a href="https://www.google.com/maps/search/?api=1&query=Wong+Chi+Kei+Senado+Square" target="_blank" rel="noopener">Maps</a><a href="https://www.instagram.com/explore/tags/wongchikei/" target="_blank" rel="noopener">IG</a></div></div>
+  </div>
+
+  <div class="note"><b>The one rule that matters.</b> Choi Hung, Ping Shek, Lok Wah and the Monster Building are people's homes, not sets. There are already signs at Quarry Bay asking visitors to seek permission, and photography inside Lai Tak Tsuen is banned outright because of how tourists behaved there. Go early, keep your voice down, no tripods, no drones, don't block a doorway, and be gone in ten minutes. These spots stay open because most visitors behave.</div>
+</section>
+
+<section id="book">
+  <h2>Book or buy before you fly</h2>
+  <p class="sub">Six things. Everything else in this plan can be decided on the morning of.</p>
+  <ul class="check">
+    <li><div><b>Ngong Ping 360 — one-way down, Tue 13 Oct, ~15:00</b>Crystal Cabin HK$235 each. Online is cheaper than the gate and skips the ticket queue entirely. <a href="https://www.np360.com.hk/en" target="_blank" rel="noopener">np360.com.hk</a></div></li>
+    <li><div><b>TurboJET, Kowloon → Taipa, Thu 15 Oct 09:15</b>Only two sailings a day on this route, small boats. Book it or you're going via Sheung Wan. <a href="https://www2.turbojet.com.hk/travel-with-us-sea-ferry/" target="_blank" rel="noopener">turbojet.com.hk</a></div></li>
+    <li><div><b>TurboJET, Outer Harbour → Sheung Wan, Fri 16 Oct ~16:30</b>Frequent, but Friday evening before a holiday weekend will be busy. Book the day before at the latest.</div></li>
+    <li><div><b>Optional: Hutong, Mon 12 Oct 20:00</b>Only if you pick the harbour-view dinner. Ask for a window table — the light show is at 20:00.</div></li>
+    <li><div><b>Macanese dinner, Thu 15 Oct ~18:45</b>Restaurante Litoral needs a reservation. Henri's Galley and Ali Curry House near the hotel don't.</div></li>
+    <li><div><b>Optional: House of Dancing Water, Thu 15 Oct 19:30</b>From ~HK$680. If you want it, book now and shift Thursday's dinner earlier. <a href="https://www.cityofdreamsmacau.com/en/house-of-dancing-water" target="_blank" rel="noopener">cityofdreamsmacau.com</a></div></li>
+    <li><div><b>Optional: Macau Tower bungy, Fri 16 Oct afternoon</b>MOP 3,000–3,500. Walk-ups are possible but slots fill. <a href="https://www.macautower.com.mo/en/entertainment/adventure/" target="_blank" rel="noopener">macautower.com.mo</a></div></li>
+    <li><div><b>An eSIM covering Hong Kong AND Macau</b>Separate networks — a HK-only plan roams or dies the moment you cross. €5–12 for a regional bundle.</div></li>
+    <li><div><b>Octopus card — buy at HKG arrivals, or add to iPhone before you land</b>HK$39 tourist card, no deposit. It's the metro, buses, trams, ferries, 7-Eleven and most restaurants.</div></li>
+  </ul>
+</section>
+
+<section id="cost">
+  <h2>What it costs</h2>
+  <p class="sub">Per person, in Hong Kong dollars, for exactly the plan above. Excludes your flights and the hotels you've already booked. HK$100 ≈ €11.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Day</th><th>What</th><th style="text-align:right">HK$</th></tr></thead>
+      <tbody>
+        <tr><td class="n">Mon</td><td>A21 from airport, Octopus card, Temple Street dinner, dessert</td><td class="n">255</td></tr>
+        <tr><td class="n">Tue</td><td>MTR, taxi up to Ngong Ping (your half), Tai O bus, cable car Crystal Cabin one way, Tai O sampan, three meals</td><td class="n">615</td></tr>
+        <tr><td class="n">Wed</td><td>Star Ferry ×3, bus 15, Peak Tram down, MTR, Braemar buses, races entry + a few bets, three meals</td><td class="n">450</td></tr>
+        <tr><td class="n">Thu</td><td>Ferry to Taipa, Macau buses, Taipa + Coloane grazing, Macanese dinner</td><td class="n">620</td></tr>
+        <tr><td class="n">Fri</td><td>Macau Tower deck, lunch, ferry back to Sheung Wan, MTR, two drinks at Ozone</td><td class="n">760</td></tr>
+        <tr><td class="n">Sat</td><td>MTR all day, Sham Shui Po crawl, breakfast, A21 to airport</td><td class="n">310</td></tr>
+        <tr><td class="n"></td><td>Contingency, water, coffee, the things you buy anyway</td><td class="n">400</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td></td><td>Total per person, six days</td><td class="n">≈ 3,410 &nbsp;(≈ €375)</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="note calm"><b>If you add the two big optionals.</b> House of Dancing Water at HK$680 and the Macau Tower bungy at about HK$3,200 would take one person to roughly HK$7,200 (≈ €790). Both are genuinely once-in-a-trip. If you only want one, the bungy is the rarer thing — there's no other building bungy that high anywhere.</div>
+</section>
+
+<section>
+  <h2>Swaps, if the weather or the mood turns</h2>
+  <p class="sub">Four substitutions that don't break the routing.</p>
+  <div class="swaps">
+    <div class="swap">
+      <h4>Rain on Tuesday → do Wednesday's plan instead</h4>
+      <p>Lantau in cloud is a wasted HK$235 — the Buddha disappears and the cable car shows you fog. Swap the two days entirely; Central, Man Mo, Tai Kwun and the Monster Building all work wet. Just remember the races are Wednesday only, so if you swap, do the Island day without them and take the Peak on Wednesday morning instead.</p>
+    </div>
+    <div class="swap">
+      <h4>You'd rather hike than shoot estates</h4>
+      <p>Replace Saturday's Kowloon circuit with <strong>Dragon's Back</strong> — 8 km along a sea ridge to Big Wave Bay, 2–3 hours, beginner level. But it's a holiday Saturday, so start by 08:00 and accept company on the trail. You'd lose Choi Hung, which is the better photograph.</p>
+    </div>
+    <div class="swap">
+      <h4>You want an island day instead of Lantau</h4>
+      <p><strong>Sai Kung</strong> plus a sampan to Sharp Island — the volcanic sandbar you can walk across at low tide — and seafood picked from the tanks on the promenade. More relaxing than Tuesday, less spectacular, and about the same money.</p>
+    </div>
+    <div class="swap">
+      <h4>Typhoon signal goes up</h4>
+      <p>At signal 8 the city shuts: MTR limited, ferries stopped, most shops closed. Mid-October it's unlikely but possible. Indoor fallbacks within reach of base: <strong>M+</strong> and the <strong>Hong Kong Palace Museum</strong> at West Kowloon, 25 minutes on foot from Shanghai Street, plus Langham Place in Mong Kok. Check <a href="https://www.hko.gov.hk/en/" target="_blank" rel="noopener">hko.gov.hk</a> each morning.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Fares, opening hours and fixtures checked September 2026 against TurboJET, One Bus, MTR, New Lantao Bus, Ngong Ping 360, the Hong Kong Jockey Club fixture list, Hong Kong Tourism Board, Macau Tourism and the Hong Kong Observatory sunrise/sunset tables. Sunset 18:00, sunrise 06:18 across the whole week. Chung Yeung Festival: Sun 18 Oct 2026, holiday observed Mon 19 Oct. Happy Valley night fixture confirmed for Wed 14 Oct 2026.<br><br>
+  Prices change. Every claim above links to its source — re-check the three you're booking.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  // Adds a "See photos" link to every photo-tagged step in the day-by-day,
+  // so you never have to scroll to the recon section to check what a place looks like.
+  var MAP = [
+    ["Temple Street Night Market","Temple Street Night Market Hong Kong neon night"],
+    ["Mak Man Kee","Mak Man Kee wonton noodles Jordan Hong Kong"],
+    ["Hutong","Hutong restaurant Tsim Sha Tsui harbour view"],
+    ["Walk north up Nathan Road","Sai Yeung Choi Street South Mong Kok neon signs"],
+    ["Tian Tan Buddha","Tian Tan Big Buddha Lantau steps"],
+    ["Tai O fishing village","Tai O stilt houses fishing village Lantau"],
+    ["Ngong Ping 360 cable car","Ngong Ping 360 crystal cabin glass floor view"],
+    ["Signal Hill Garden","Signal Hill Garden Blackhead Point Tower Tsim Sha Tsui"],
+    ["Sunset on the Tsim Sha Tsui promenade","Tsim Sha Tsui promenade skyline blue hour Hong Kong"],
+    ["Star Ferry to Central","Star Ferry Hong Kong night harbour"],
+    ["Lugard Road loop","Lugard Road viewpoint Victoria Peak Hong Kong"],
+    ["Central: the escalator","Graham Street mural Central Hong Kong old shopfronts"],
+    ["Man Mo Temple","Man Mo Temple Hong Kong incense coils interior"],
+    ["Tai Kwun + PMQ","Tai Kwun JC Contemporary spiral staircase"],
+    ["The Monster Building","Monster Building Quarry Bay Yick Cheong courtyard"],
+    ["Red Incense Burner Summit","Red Incense Burner Summit Braemar Hill sunset skyline"],
+    ["Happy Valley night racing","Happy Valley Racecourse night racing Hong Kong"],
+    ["Taipa Village, Rua do Cunha","Taipa Houses Museum Macau green villas"],
+    ["Coloane: Lord Stow","Chapel of St Francis Xavier Coloane Macau"],
+    ["Penha Hill for sunset","Penha Hill Macau view chapel sunset"],
+    ["Cotai Strip after dark","Wynn Palace Macau SkyCab fountain show night"],
+    ["Option B: Casinos","Grand Lisboa Macau night casino"],
+    ["A-Ma Temple","A-Ma Temple Macau incense coils"],
+    ["The UNESCO walk","Ruins of St Paul's Macau facade staircase"],
+    ["Pick one: Macau Tower","Macau Tower bungy jump glass floor observation deck"],
+    ["Last big night: Ozone","Ozone bar Ritz Carlton Hong Kong ICC view"],
+    ["Yau Ma Tei Wholesale Fruit Market","Yau Ma Tei Wholesale Fruit Market"],
+    ["Choi Hung Estate rainbow","Choi Hung Estate rainbow basketball court Hong Kong"],
+    ["Ping Shek Estate","Ping Shek Estate Hong Kong architecture photography"],
+    ["Lok Wah South Estate","Lok Wah South Estate car park blue circles Hong Kong"],
+    ["Chi Lin Nunnery","Nan Lian Garden golden pavilion Hong Kong"],
+    ["Nam Shan Estate arches","Nam Shan Estate green arch Hong Kong photo spot"],
+    ["Sham Shui Po — eat everything","Apliu Street flea market Sham Shui Po"]
+  ];
+
+  var heads = document.querySelectorAll(".step .c h4");
+  Array.prototype.forEach.call(heads, function(h){
+    var txt = h.textContent || "";
+    var hit = null;
+    for (var i = 0; i < MAP.length; i++){
+      if (txt.indexOf(MAP[i][0]) > -1){ hit = MAP[i]; break; }
+    }
+    if (!hit) return;
+
+    var c = h.parentNode;
+    var links = c.querySelector(".links");
+    if (!links){
+      links = document.createElement("div");
+      links.className = "links";
+      c.appendChild(links);
+    }
+    var a = document.createElement("a");
+    a.className = "seeimg";
+    a.href = "https://www.google.com/search?udm=2&q=" + encodeURIComponent(hit[1]);
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "See photos";
+    links.insertBefore(a, links.firstChild);
+  });
+})();
+</script>
+
+<style>
+/* ---- skip / keep toggles ---- */
+.wrap{padding-bottom:118px}
+.step{padding-right:82px}
+.step.move{padding-right:16px}
+.rc{position:relative}
+.tgl{
+  position:absolute;top:11px;right:14px;
+  font-family:var(--disp);font-size:11px;font-weight:600;letter-spacing:.01em;
+  background:transparent;color:var(--muted);border:1px solid var(--line);
+  border-radius:100px;padding:3px 10px;cursor:pointer;line-height:1.4;
+}
+.tgl:hover{border-color:var(--accent);color:var(--accent)}
+.rl .tgl{position:static;padding:3px 10px;margin-left:auto}
+.is-skipped{opacity:.42}
+.is-skipped .c h4,.is-skipped>h4{text-decoration:line-through;text-decoration-thickness:1px}
+.is-skipped .tgl{background:var(--accent);border-color:var(--accent);color:#fff;opacity:1}
+.is-skipped .tgl:hover{color:#fff;opacity:.85}
+.skipmark{
+  display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  background:var(--accent-soft);border-radius:4px;padding:2px 6px;margin-bottom:5px;
+}
+body.hide-skipped .is-skipped{display:none}
+
+#skipbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:color-mix(in srgb,var(--surface) 94%,transparent);
+  backdrop-filter:blur(14px);border-top:1px solid var(--line);
+  padding:9px 16px calc(9px + env(safe-area-inset-bottom,0px));
+}
+#skipbar .inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#skipstat{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);margin-right:auto;font-variant-numeric:tabular-nums}
+#skipstat b{color:var(--accent);font-weight:700}
+#skipbar button{
+  font-family:var(--disp);font-size:12px;font-weight:600;cursor:pointer;
+  background:transparent;color:var(--ink-2);border:1px solid var(--line);
+  border-radius:100px;padding:5px 12px;
+}
+#skipbar button:hover{border-color:var(--accent);color:var(--accent)}
+#skipbar button.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+@media (max-width:480px){
+  .step{padding-right:74px}
+  #skipstat{font-size:11px}
+}
+</style>
+
+<script>
+(function(){
+  var KEY = "hkmax-skips-v1";
+
+  // Patterns that belong to the same real-world stop, so skipping it in the
+  // schedule also greys it out in the photo recon, and the other way round.
+  var GROUPS = [
+    ["temple-street","Temple Street Night Market"],
+    ["mongkok","Walk north up Nathan Road","Sai Yeung Choi Street South"],
+    ["woosung","Woosung Street cooked-food"],
+    ["dessert","Late dessert"],
+    ["oz-dairy","Australia Dairy Company"],
+    ["buddha","Tian Tan Buddha"],
+    ["wisdom","Wisdom Path"],
+    ["taio","Tai O fishing village","Tai O stilt houses","Tai O Heritage Hotel"],
+    ["cablecar","Ngong Ping 360 cable car","Ngong Ping 360 Crystal Cabin"],
+    ["signalhill","Signal Hill Garden"],
+    ["goldwalls","China Hong Kong City gold walls"],
+    ["tst-sunset","Sunset on the Tsim Sha Tsui promenade","Tsim Sha Tsui promenade, blue hour"],
+    ["tst-dinner","Dinner in Tsim Sha Tsui"],
+    ["symphony","Symphony of Lights"],
+    ["starferry","Star Ferry to Central","Star Ferry at night"],
+    ["yumcha","Yum cha — proper morning dim sum"],
+    ["lugard","Lugard Road loop","Lugard Road viewpoint"],
+    ["peaktram","Peak Tram"],
+    ["dingding","Ding Ding tram"],
+    ["central-walk","Central: the escalator","Mid-Levels escalator","Graham Street mural"],
+    ["kaukee","Kau Kee beef brisket"],
+    ["manmo","Man Mo Temple"],
+    ["taikwun","Tai Kwun + PMQ","JC Contemporary spiral stair"],
+    ["monster","Monster Building"],
+    ["braemar","Red Incense Burner Summit"],
+    ["races","Happy Valley night racing","Happy Valley racecourse"],
+    ["taipa","Taipa Village, Rua do Cunha","Rua do Cunha"],
+    ["taipahouses","Taipa Houses"],
+    ["coloane","Coloane: Lord Stow","Chapel of St Francis Xavier"],
+    ["penha","Penha Hill"],
+    ["macanese","Macanese dinner"],
+    ["cotai","Cotai Strip after dark","Wynn Palace SkyCab"],
+    ["casinos","Option B: Casinos"],
+    ["venetian","The Venetian canals"],
+    ["parisian","The Parisian Eiffel Tower"],
+    ["ama","A-Ma Temple"],
+    ["eggtart","Egg tart and a gal"],
+    ["unesco","The UNESCO walk","Ruins of St Paul's","Lilau Square","Senado Square"],
+    ["montefort","Monte Fort"],
+    ["wongchikei","Wong Chi Kei"],
+    ["macautower","Pick one: Macau Tower","Macau Tower"],
+    ["ozone","Last big night: Ozone","Ozone, 118th floor"],
+    ["fruitmarket","Wholesale Fruit Market"],
+    ["mido","Mido Cafe"],
+    ["choihung","Choi Hung Estate rainbow"],
+    ["pingshek","Ping Shek Estate"],
+    ["lokwah","Lok Wah South Estate"],
+    ["chilin","Chi Lin Nunnery","Nan Lian Garden"],
+    ["ssp","Sham Shui Po — eat everything","Apliu Street"],
+    ["namshan","Nam Shan Estate arches"],
+    ["gardenhill","Garden Hill"]
+  ];
+
+  // Pre-skipped because you said so. One tap on "Add back" restores either.
+  var DEFAULT_SKIPS = ["taipahouses","choihung"];
+
+  function slug(s){
+    return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,44);
+  }
+  function keyFor(text){
+    for (var i=0;i<GROUPS.length;i++){
+      for (var j=1;j<GROUPS[i].length;j++){
+        if (text.indexOf(GROUPS[i][j]) > -1) return GROUPS[i][0];
+      }
+    }
+    return "x-" + slug(text);
+  }
+  function minutesOf(el){
+    var em = el.querySelector(".t em");
+    if (!em) return 0;
+    var t = em.textContent || "";
+    var m = t.match(/(\d+)\s*min/);
+    if (m) return parseInt(m[1],10);
+    var h = t.match(/(\d+)(½)?\s*hr/);
+    if (h) return parseInt(h[1],10)*60 + (h[2] ? 30 : 0);
+    return 0;
+  }
+  function fmt(mins){
+    if (mins <= 0) return "0m";
+    var h = Math.floor(mins/60), m = mins%60;
+    return (h ? h+"h " : "") + (m ? m+"m" : (h ? "" : "0m"));
+  }
+
+  var state = {};
+  try {
+    var raw = localStorage.getItem(KEY);
+    state = raw ? JSON.parse(raw) : null;
+  } catch(e){ state = null; }
+  if (!state || typeof state !== "object"){
+    state = {};
+    DEFAULT_SKIPS.forEach(function(k){ state[k] = true; });
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+  }
+
+  var items = [];
+  function register(el, headEl){
+    var k = keyFor(headEl.textContent || "");
+    el.setAttribute("data-k", k);
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "tgl";
+    var host = el.classList.contains("rc") ? el.querySelector(".rl") : el;
+    if (host) host.appendChild(btn);
+    items.push({el:el, key:k, btn:btn, head:headEl, mins: el.classList.contains("rc") ? 0 : minutesOf(el)});
+    btn.addEventListener("click", function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      state[k] = !state[k];
+      if (!state[k]) delete state[k];
+      save(); paint();
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".step"), function(s){
+    if (s.classList.contains("move")) return;
+    var h = s.querySelector(".c h4");
+    if (h) register(s, h);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".rc"), function(c){
+    var h = c.querySelector("h4");
+    if (h) register(c, h);
+  });
+
+  function paint(){
+    var skippedKeys = {}, freed = 0;
+    items.forEach(function(it){
+      var off = !!state[it.key];
+      it.el.classList.toggle("is-skipped", off);
+      it.btn.textContent = off ? "Add back" : "Skip";
+      it.btn.setAttribute("aria-pressed", off ? "true" : "false");
+      var mark = it.head.parentNode.querySelector(".skipmark");
+      if (off && !mark){
+        var sp = document.createElement("span");
+        sp.className = "skipmark";
+        sp.textContent = "Skipped";
+        it.head.parentNode.insertBefore(sp, it.head);
+      } else if (!off && mark){
+        mark.parentNode.removeChild(mark);
+      }
+      if (off){
+        if (!skippedKeys[it.key]){ skippedKeys[it.key] = true; freed += it.mins; }
+        else freed += it.mins;
+      }
+    });
+    var n = Object.keys(skippedKeys).length;
+    var stat = document.getElementById("skipstat");
+    stat.innerHTML = n
+      ? "<b>" + n + "</b> stop" + (n===1?"":"s") + " skipped · about <b>" + fmt(freed) + "</b> freed up"
+      : "Nothing skipped — tap <b>Skip</b> on anything you'd rather not do";
+  }
+
+  var bar = document.createElement("div");
+  bar.id = "skipbar";
+  bar.innerHTML =
+    '<div class="inner">' +
+      '<span id="skipstat"></span>' +
+      '<button type="button" id="hideBtn">Hide skipped</button>' +
+      '<button type="button" id="resetBtn">Reset all</button>' +
+    '</div>';
+  document.body.appendChild(bar);
+
+  var hidden = false;
+  document.getElementById("hideBtn").addEventListener("click", function(){
+    hidden = !hidden;
+    document.body.classList.toggle("hide-skipped", hidden);
+    this.textContent = hidden ? "Show skipped" : "Hide skipped";
+    this.classList.toggle("on", hidden);
+  });
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    state = {}; save(); paint();
+    if (hidden){ document.getElementById("hideBtn").click(); }
+  });
+
+  paint();
+})();
+</script>
+
+<style>
+/* ---- priority labels ---- */
+.tag.t-core{background:var(--accent);color:#fff}
+.tag.t-worth{background:var(--blue-soft);color:var(--blue)}
+.tag.t-opt{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+.tag.t-fixed{background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.rc .tag{display:inline-block;align-self:flex-start;margin-bottom:6px}
+.is-fixed .tgl{display:none}
+.step.is-fixed{padding-right:16px}
+body.core-only .t-worth,body.core-only .t-opt{display:none}
+
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.legend div{display:flex;gap:7px;align-items:baseline;font-size:13.5px;font-weight:300;color:var(--ink-2)}
+.legend .tag{flex:0 0 auto}
+</style>
+
+<script>
+(function(){
+  // Ordered rules — first match wins. Everything unmatched is "worth it".
+  var RULES = [
+    ["fixed","UO 717 lands","Drop bags, 279","MTR home — two stops","Check out, bags with you",
+             "Check in — Hotel Riviera","Shuttle home","Back to Shanghai Street, collect bags",
+             "HKG Terminal 1 · check in"],
+    ["worth","Wong Chi Kei"],
+    ["core","Temple Street Night Market","Tian Tan Buddha","Ngong Ping 360 cable car",
+            "Ngong Ping 360 Crystal Cabin","Sunset on the Tsim Sha Tsui promenade",
+            "Tsim Sha Tsui promenade, blue hour","Star Ferry to Central","Star Ferry at night",
+            "Lugard Road","Man Mo Temple","Monster Building","Red Incense Burner Summit",
+            "Happy Valley","The UNESCO walk","Ruins of St Paul's","Senado Square",
+            "Sham Shui Po — eat everything","Macanese dinner"],
+    ["opt","Mak Man Kee","Hutong","Ding Ding tram","Late dessert","Signal Hill Garden","China Hong Kong City gold walls",
+           "Symphony of Lights","Coloane: Lord Stow","Chapel of St Francis Xavier",
+           "Egg tart and a gal","Pick one: Macau Tower","Macau Tower","Last big night: Ozone",
+           "Ozone, 118th floor","Choi Hung Estate rainbow","Ping Shek Estate",
+           "Lok Wah South Estate","Taipa Houses","The Parisian Eiffel Tower","Monte Fort",
+           "Tai O Heritage Hotel"]
+  ];
+  var LABEL = {core:"Core", worth:"Worth it", opt:"Optional", fixed:"Fixed"};
+
+  function tierOf(text){
+    if (text.trim() === "Home") return "fixed";
+    for (var i=0;i<RULES.length;i++){
+      for (var j=1;j<RULES[i].length;j++){
+        if (text.indexOf(RULES[i][j]) > -1) return RULES[i][0];
+      }
+    }
+    return "worth";
+  }
+
+  function label(el, head, isCard){
+    var t = tierOf(head.textContent || "");
+    el.classList.add("t-" + t);
+    if (t === "fixed") el.classList.add("is-fixed");
+
+    var chip = document.createElement("span");
+    chip.className = "tag t-" + t;
+    chip.textContent = LABEL[t];
+
+    if (isCard){
+      el.insertBefore(chip, el.firstChild);
+    } else {
+      var tags = head.parentNode.querySelector(".tags");
+      if (!tags){
+        tags = document.createElement("div");
+        tags.className = "tags";
+        head.parentNode.insertBefore(tags, head);
+      }
+      tags.insertBefore(chip, tags.firstChild);
+    }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".step"), function(s){
+    if (s.classList.contains("move")) return;
+    var h = s.querySelector(".c h4");
+    if (h) label(s, h, false);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".rc"), function(c){
+    var h = c.querySelector("h4");
+    if (h) label(c, h, true);
+  });
+
+  // "Core only" filter in the bottom bar
+  var bar = document.querySelector("#skipbar .inner");
+  if (bar){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = "Core only";
+    var on = false;
+    b.addEventListener("click", function(){
+      on = !on;
+      document.body.classList.toggle("core-only", on);
+      b.classList.toggle("on", on);
+      b.textContent = on ? "Show everything" : "Core only";
+    });
+    bar.insertBefore(b, bar.querySelector("#hideBtn"));
+  }
+
+  // Legend, under the explainer note
+  var notes = document.querySelectorAll("#brief .note");
+  var target = notes[notes.length - 1];
+  if (target){
+    var lg = document.createElement("div");
+    lg.className = "legend";
+    lg.innerHTML =
+      '<div><span class="tag t-core">Core</span> the reason you came, or it only happens once</div>' +
+      '<div><span class="tag t-worth">Worth it</span> good, but the day survives without it</div>' +
+      '<div><span class="tag t-opt">Optional</span> bonus — drop these first when you run late</div>' +
+      '<div><span class="tag t-fixed">Fixed</span> flights, check-ins, bags. Not skippable</div>';
+    target.appendChild(lg);
+  }
+})();
+</script>
+</body>
+</html>
